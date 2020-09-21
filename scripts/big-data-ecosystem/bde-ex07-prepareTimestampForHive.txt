@@ -1,0 +1,13 @@
+# convert the timestamp data to the correct format for Hive
+# execute the command with root account
+
+cd /labfiles
+cp Chicago_Traffic_Tracker.csv CTT1.csv
+awk '
+    BEGIN { FS = OFS = "," } 
+    { split($1, ts, / /)
+      split(ts[1], date, /\//)
+      $1 = date[3] "-" date[1] "-" date[2] " " ts[2]
+      print $0 
+    }
+' CTT1.csv > Chicago_Traffic_Tracker.csv
