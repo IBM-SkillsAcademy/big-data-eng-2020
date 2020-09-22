@@ -1,0 +1,41 @@
+hbase shell
+help
+create 'ns_student0000:t1', 'cf1', 'cf2', 'cf3'
+list_namespace_tables 'ns_student0000'
+desc 'ns_student0000:t1'
+alter 'ns_student0000:t1', {NAME => 'cf1', COMPRESSION => 'GZ'}
+alter 'ns_student0000:t1', {NAME => 'cf1', IN_MEMORY => 'true'}
+alter 'ns_student0000:t1', {NAME => 'cf1', VERSIONS => 3}, {NAME => 'cf2', VERSIONS => 2}
+describe 'ns_student0000:t1'
+put 'ns_student0000:t1', 'row1', 'cf1:c11', 'r1v11'
+put 'ns_student0000:t1', 'row1', 'cf1:c12', 'r1v12'
+put 'ns_student0000:t1', 'row1', 'cf2:c21', 'r1v21'
+put 'ns_student0000:t1', 'row1', 'cf3:c31', 'r1v31'
+put 'ns_student0000:t1', 'row2', 'cf1:d11', 'r2v11'
+put 'ns_student0000:t1', 'row2', 'cf1:d12', 'r2v12'
+put 'ns_student0000:t1', 'row2', 'cf2:d21', 'r2v21'
+get 'ns_student0000:t1', 'row1'
+scan 'ns_student0000:t1'
+quit
+
+hdfs dfs -ls -R /apps/hbase/data/data/ns_student0000
+
+hive
+create table db_student0000.chicago_bus (timelog timestamp, region int, buscount int, logreads int, speed float) row format delimited fields terminated by ',' lines terminated by "\n";
+use db_student0000;
+show tables;
+load data local inpath '/labfiles/Chicago_Traffic_Tracker.csv' into table db_student0000.chicago_bus;
+select * from db_student0000.chicago_bus limit 10;
+select to_date(timelog), region, avg(speed) from db_student0000.chicago_bus group by to_date(timelog), region;
+create table db_student0000.chicago_region_speed (logdate timestamp, region int, speed float) row format delimited fields terminated by ',';
+insert into table db_student0000.chicago_region_speed select to_date(timelog) as timelog,region,avg(speed) as speed from db_student0000.chicago_bus group by to_date(timelog),region;
+select * from db_student0000.chicago_region_speed limit 10;
+
+beeline
+use db_student0000;
+show tables;
+select * from db_student0000.chicago_bus limit 10;
+select * from db_student0000.chicago_region_speed limit 10;
+
+
+#INSERT OVERWRITE LOCAL DIRECTORY '/home/student0000/chicagoout' SELECT to_date(timelog),region,avg(speed) from db_student0000.chicago_bus group by to_date(timelog),region;
