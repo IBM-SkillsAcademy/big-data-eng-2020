@@ -1,0 +1,6 @@
+awk '
+    BEGIN { FS = OFS = "," } 
+    { 
+      print "create database db_"$1 ";"
+    }
+' users.csv > create_hiveDBs
