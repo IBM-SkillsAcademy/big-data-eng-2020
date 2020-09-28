@@ -5,32 +5,42 @@ function pause(){
     echo ""
 }
 
-if [[ ! ("$#" == 2 && $1 =~ ^[0-9]+$) ]]; then 
-    echo 'Please pass two numbers'
-    exit 1
-fi
+#if [[ ! ("$#" == 2 && $1 =~ ^[0-9]+$) ]]; then 
+#    echo 'Please pass two numbers'
+#    exit 1
+#fi
 
-min=$1
-max=$2
+#min=$1
+#max=$2
 DB2GRP=db2users
 DB2GRPID=5000
-HADOOPGRP=hadoop
-HDFSGRP=hdfs
+#HADOOPGRP=hadoop
+#HDFSGRP=hdfs
 
 echo 'Creating db2users group ...'
 groupadd -g $DB2GRPID $DB2GRP
 pause
 echo ''
 
-echo 'Set ' $DB2GRP ' as the default group for all students ...'
-for (( n=$min; n<=$max; n++ ))
-do
-    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    usermod -G $DB2GRP $current_student
-    usermod -g $HADOOPGRP $current_student
-    echo 'Student ' $current_student ' has been modified.'
-    pause
-done
+awk ' BEGIN { FS = OFS = "," } 
+    { 
+      system("usermod -G db2users "$1);
+	  print "usermod -G db2users "$1;
+      system("usermod -g hadoop "$1);
+      print "Student "$1" has been modified.";
+    }
+' users.csv
+
+#echo 'Set ' $DB2GRP ' as the default group for all students ...'
+#for (( n=$min; n<=$max; n++ ))
+#do
+#    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+#    usermod -G $DB2GRP $current_student
+#    usermod -g $HADOOPGRP $current_student
+#    echo 'Student ' $current_student ' has been modified.'
+#    pause
+#done
+pause
 echo ''
 
 profile_filename=/etc/profile
@@ -51,7 +61,7 @@ echo 'Granting db2 priviledges to all students ...'
 /bin/su -c "/home/bigsql/bigsql_grants.sh $DB2GRP" - bigsql
 echo ''
 
-echo 'Creating folders for students in HDFS ...'
-/bin/su -c "/home/hdfs/bigsql_hdfs_folders.sh $min $max $HDFSGRP" - hdfs
-echo ''
+#echo 'Creating folders for students in HDFS ...'
+#/bin/su -c "/home/hdfs/bigsql_hdfs_folders.sh $min $max $HDFSGRP" - hdfs
+#echo ''
 
