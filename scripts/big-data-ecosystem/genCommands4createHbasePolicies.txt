@@ -1,0 +1,8 @@
+awk '
+    BEGIN { FS = OFS = "," } 
+    { 
+      print "create_namespace '\''ns_"$1"'\''"
+      print "grant '\''"$1"'\'', '\''RWXC'\'', '\''@ns_"$1"'\''"
+      
+    }
+' users.csv > create_hbaseNSAndPermissions
