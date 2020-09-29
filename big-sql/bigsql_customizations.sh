@@ -22,7 +22,7 @@ groupadd -g $DB2GRPID $DB2GRP
 pause
 echo ''
 
-awk ' BEGIN { FS = OFS = "," } 
+awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," } 
     { 
       system("usermod -G db2users "$1);
 	  print "usermod -G db2users "$1;
