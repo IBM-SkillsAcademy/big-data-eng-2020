@@ -11,34 +11,34 @@ Using Ambari Web
 --------------------------------------------------------------
 The default password for Ambari Web Admin is admin. It is required to change it to bigdata2020 as it will be used with the scripts (bdescripts/createHivePolicies.sh).
 
-1-1: Open Ambari Web and login with the default password (admin/admin).
-1-2: Select "admin" button in the top right of the screen -> Select "Manage Ambari"
-1-3: Select "Users" at left side bar.
-1-4: Select edit icon beside admin user (looks like a pen at left side)
-1-5: Select change Password button
-1-6: Type the old password (admin) and type bigdata2020 in the new password
-1-7: Select OK button
+1. Open Ambari Web and login with the default password (admin/admin).
+2. Select "admin" button in the top right of the screen -> Select "Manage Ambari"
+3. Select "Users" at left side bar.
+4. Select edit icon beside admin user (looks like a pen at left side)
+5. Select change Password button
+6. Type the old password (admin) and type bigdata2020 in the new password
+7. Select OK button
 
 --------------------------------------------------------------
 2- Create Ambari user for exercises
 --------------------------------------------------------------
-2-1: Select "ADD USERS" button at the top right.
-2-2: In "Add Users" dialog, type "ambari_user" in "Username" and type "SkillsAcademyBigData" in "Password" and "Confirm Password" fields.
-2-3: Select "Save"
+1. Select "ADD USERS" button at the top right.
+2. In "Add Users" dialog, type "ambari_user" in "Username" and type "SkillsAcademyBigData" in "Password" and "Confirm Password" fields.
+3. Select "Save"
 
 
 --------------------------------------------------------------
 3- Enable Autherization for HBase
 --------------------------------------------------------------
-3-1: Select "Dashboard" at left side bar
-3-2: Select "HBase" under Services at left side bar
-3-3: Select "CONFIG" tab -> scrol down to "Security" section
-3-4: Turn on "Enable Authorization"
-3-5: Click "SAVE" button
-3-6: In "Save Configuration" dialog, type: "Enable HBase Authorization", then clich "Save"
-3-7: Ambari will prompt for some recommended changes, accept it.
-3-8: Select "Restart" -> "Restart all required"
-3-9: Confirm that all required services started successfully.
+1. Select "Dashboard" at left side bar
+2. Select "HBase" under Services at left side bar
+3. Select "CONFIG" tab -> scrol down to "Security" section
+4. Turn on "Enable Authorization"
+5. Click "SAVE" button
+6. In "Save Configuration" dialog, type: "Enable HBase Authorization", then clich "Save"
+7. Ambari will prompt for some recommended changes, accept it.
+8. Select "Restart" -> "Restart all required"
+9. Confirm that all required services started successfully.
 
 --------------------------------------------------------------
 4- Enable Ranger Hive plugin
