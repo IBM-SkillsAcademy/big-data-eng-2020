@@ -1,6 +1,6 @@
-awk '
+awk -v RS='\r?\n' '
     BEGIN { FS = OFS = "," } 
     { 
       print "create database db_"$1 ";"
     }
-' users.csv > create_hiveDBs
+' users.csv > /createHiveDBs.sql
