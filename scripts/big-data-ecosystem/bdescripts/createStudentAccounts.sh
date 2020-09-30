@@ -5,8 +5,7 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
       system("echo \"" email[1] "\" | passwd --stdin "$1);
       system("su hdfs -c '\''hadoop fs -mkdir -p /user/"$1"'\''");
       system("su hdfs -c '\''hadoop fs -chown "$1":hdfs /user/"$1"'\''");
-      system("su hdfs -c '\''hadoop fs -chmod a-x /user/"$1"'\''");
-      system("su hdfs -c '\''hadoop fs -chmod g-x /user/"$1"'\''");
+      system("su hdfs -c '\''hadoop fs -chmod 745 /user/"$1"'\''");
 	  print $1 " account created and configured";
 
     }

@@ -13,7 +13,7 @@ echo 'Adding java path to environment variables ...'
 cp -n myenvvars.sh /etc/profile.d/
 pause
 
-echo 'Creating Hive namspaces and granting permissions ...'
+echo 'Creating HBase namspaces and granting permissions ...'
 source genHbasescript.sh
 pause
 
