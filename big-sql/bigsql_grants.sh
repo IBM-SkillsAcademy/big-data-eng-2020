@@ -10,8 +10,8 @@ function pause(){
 echo 'Granting db2 priviledges to all students ...'
 db2 connect to bigsql
 db2 grant CONNECT, CREATETAB, IMPLICIT_SCHEMA, LOAD ON DATABASE TO GROUP $DB2GRP
-db2 grant DBADM on database to group $DB2GRP
-db2 revoke DBADM on database from group $DB2GRP
+#db2 grant DBADM on database to group $DB2GRP
+#db2 revoke DBADM on database from group $DB2GRP
 db2 connect reset
 pause
 echo ''
