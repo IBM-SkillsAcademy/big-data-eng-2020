@@ -56,9 +56,11 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
 1. Open PuTTy shell and login with root
 2. Copy the compressed folder bdescripts from https://github.com/IBM-SkillsAcademy/big-data-eng-2020/tree/master/scripts/big-data-ecosystem/ to /root directory in the VM
 3. Extract the compressed bdescript folder by using the command below:
+   \n 
    tar zxvf bdescripts.tar.gz
 4. Copy users.csv file, which consists of two columns (The 1st column contains the account name and the 2nd one contains the email) to /root/bdescripts
-scp users.csv root@41.58.181.236:/root/bdescripts/users.csv
+\n You can see a sample file at https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv
+\n scp users.csv root@41.58.181.236:/root/bdescripts/users.csv
 5. cd /root/bdescripts
 6. chmod 744 bde_envPrepare.sh
 7. ./bde_envPrepare.sh
