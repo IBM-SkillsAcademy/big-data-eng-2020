@@ -10,7 +10,8 @@ source createStudentAccounts.sh
 pause
 
 echo 'Adding java path to environment variables ...'
-cp -n myenvvars.sh /etc/profile.d/
+#cp -n myenvvars.sh /etc/profile.d/
+source addJavaToEnvVars.sh
 pause
 
 echo 'Creating HBase namspaces and granting permissions ...'
