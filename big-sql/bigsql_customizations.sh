@@ -25,8 +25,8 @@ echo ''
 awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," } 
     { 
       system("usermod -G db2users "$1);
-	  print "usermod -G db2users "$1;
-      system("usermod -g hadoop "$1);
+	  system("usermod -g hadoop "$1);
+	  print "usermod -G db2users,hdfs "$1;
       print "Student "$1" has been modified.";
     }
 ' users.csv
