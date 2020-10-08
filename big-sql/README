@@ -3,9 +3,8 @@ To customize the VM for the Big SQL labs:
     bigsql_customizations.sh (place the file in /root)
     bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh (place the files in /home/bigsql)
     bigsql_hdfs_folders.sh (place the file in /home/hdfs)
- 2. Copy users.csv file, which consists of two columns (The 1st column contains the account name and the 2nd one contains the email) to /root
-<br>You can see a sample file at https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv
-<br> scp users.csv root@41.58.181.236:/root/users.csv
+ 2. Copy users.csv file from /root/bdescripts to /root by running the command below:
+ <br> cp /root/bdescripts/user.csv /root/user.csv 
  2. Make sure of the following:
     bigsql_customizations.sh is owned by root user.
     bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh are owned by bigsql user.
