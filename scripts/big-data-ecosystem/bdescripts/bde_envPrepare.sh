@@ -25,7 +25,7 @@ source createHivePolicies.sh
 pause
 
 echo 'Preparing labfiles folder ...'
-source preparelabfilesFolder.sh
+source prepareLabfilesFolder.sh
 pause
 
 echo 'Congratulations! .. Environment is prepared for Big Data Ecosystem exercises'

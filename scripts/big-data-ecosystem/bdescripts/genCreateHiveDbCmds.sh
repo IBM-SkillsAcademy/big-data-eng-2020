@@ -3,4 +3,4 @@ awk -v RS='\r?\n' '
     { 
       print "create database db_"$1 ";"
     }
-' users.csv > /createHiveDBs.sql
+' users.csv > createHiveDBs.sql
