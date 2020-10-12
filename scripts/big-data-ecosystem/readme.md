@@ -10,7 +10,7 @@ ______________________________________________________________
 --------------------------------------------------------------
 1- Create Ambari user for exercises
 --------------------------------------------------------------
-1. Start Ambari Web (http://hostname:8080) and login with admin/bigdata2020
+1. Start Ambari Web (http://hostname:8080) and login with admin user
 2. Select "admin" menu at top right -> "Manage Ambari"
 3. Select "Users" at left side bar.
 4. Select "ADD USERS" button at the top right.
@@ -24,7 +24,7 @@ ______________________________________________________________
 --------------------------------------------------------------
 2- Enable Autherization for HBase
 --------------------------------------------------------------
-1. Start Ambari Web (http://hostname:8080) and login with admin/bigdata2020
+1. Start Ambari Web (http://hostname:8080) and login with admin user
 2. Select "Dashboard" at left side bar
 3. Select "HBase" under Services at left side bar
 4. Select "CONFIG" tab -> scrol down to "Security" section
@@ -39,7 +39,7 @@ ______________________________________________________________
 --------------------------------------------------------------
 3- Enable Ranger Hive plugin
 --------------------------------------------------------------
-1. Start Ambari Web (http://hostname:8080) and login with admin/bigdata2020
+1. Start Ambari Web (http://hostname:8080) and login with admin user
 2. Select "Dashboard" at left side bar
 3. Select "Ranger" under Services at left side bar
 4. Select "CONFIG" tab -> "Ranger Plugin" tab
