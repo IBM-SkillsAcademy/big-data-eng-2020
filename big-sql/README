@@ -2,7 +2,6 @@ To customize the VM for the Big SQL labs:
  1. Download three scripts into the VM:
     bigsql_customizations.sh (place the file in /root)
     bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh (place the files in /home/bigsql)
-    bigsql_hdfs_folders.sh (place the file in /home/hdfs)
  2. Copy users.csv file from /root/bdescripts to /root by running the command below:
  <br> cp /root/bdescripts/user.csv /root/user.csv 
  2. Make sure of the following:

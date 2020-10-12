@@ -21,11 +21,10 @@ pause
 echo 'Creating Hive databases ...'
 source genCreateHiveDbCmds.sh
 su hive -c 'hive -f createHiveDBs.sql'
-source createHivePolicies.sh
+source createHivePolicies.sh $1
 pause
 
 echo 'Preparing labfiles folder ...'
 source prepareLabfilesFolder.sh
-pause
 
 echo 'Congratulations! .. Environment is prepared for Big Data Ecosystem exercises'
