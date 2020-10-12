@@ -68,7 +68,7 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
 <br> scp users.csv root@41.58.181.236:/root/bdescripts/users.csv
 5. cd /root/bdescripts
 6. chmod 744 bde_envPrepare.sh
-7. ./bde_envPrepare.sh "<ambari password>" 
+7. ./bde_envPrepare.sh "<<ambari password>>" 
 where <ambari password> is the ambari password
 
 ---------------------------------------------------------------------------
