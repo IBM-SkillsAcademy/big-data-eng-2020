@@ -5,6 +5,3 @@ This repo contains sample application programs in source language and configurat
 **INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS INFORMATION “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITEDTO, THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.**
 
 Any references in this information to non-IBM websites are provided for convenience only and do not in any manner serve as an endorsement of those websites. The materials at those websites are not part of the materials for this education materials and use of those websites is at your own risk.
-
-
-This is a **\<variable\>**
