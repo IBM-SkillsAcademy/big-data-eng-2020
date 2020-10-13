@@ -25,15 +25,15 @@ The `bigsql_grants.sh` file will download the lab files from github and extract 
 So you don't need to manually download the labs.
 
 ---------------------------------------------------------------------------
-### Steps to run before Bigsql exercises 6.
+### Steps to run before Big SQL Exercise-6.
 ---------------------------------------------------------------------------    
-Before running **Bigsql Ex. 6** run `bigsql_grantDBADM.sh` as below:  
+Before running **Big SQL Ex. 6** run `bigsql_grantDBADM.sh` as below:  
 Login with **root** account  
     `cd /home/bigsql`  
     `su bigsql`  
     `./bigsql_grantDBADM.sh`  
 
-After running **Bigsql Ex. 6** run `bigsql_revokeDBADM.sh` as below:  
+After running **Big SQL Ex. 6** run `bigsql_revokeDBADM.sh` as below:  
 Login with **root** account  
     `cd /home/bigsql`  
     `su bigsql`  

@@ -28,7 +28,7 @@ ______________________________________________________________
 2.  Check if port 53 is available; run the following command:  
     `lsof -i :53`  
       If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command  
-    `kill -9 \<PID\>`  
+    `kill -9 <PID>`  
 3. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
 4. Check if all services are started.  
    a. Click **\>** next to Services to expand  
