@@ -71,7 +71,7 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
 1. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv).
    -  A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv
    -  Transfer the users.csv file to the VM  
-    `scp users.csv root@**/<ip_address/>**:/root/bdescripts/users.csv`  
+    `scp users.csv root@<ip_address>:/root/bdescripts/users.csv`  
 
 2. Open PuTTy shell and login with **root**
 
@@ -84,7 +84,7 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
     `chmod 744 bde_envPrepare.sh`  
 
 5. Execute the script   
-    `./bde_envPrepare.sh "<Ambari_Admin_password>  "`  
+    `./bde_envPrepare.sh "<Ambari_Admin_password>"`  
    where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 
 ---------------------------------------------------------------------------
