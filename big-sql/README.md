@@ -13,7 +13,7 @@ To customize the VM for the Big SQL labs:
  3. Make sure of the following:  
     `bigsql_customizations.sh` is owned by **root** user.  
     `bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh` are owned by **bigsql** user.  
-    `bigsql_hdfs_folders.sh` is owned by **hdfs**.  
+    
  4. Make sure the file permissions are **744** for the three scripts. eg.:  
      `chmod 744 *.sh`    
  5. As **root**, run the first script only:  
