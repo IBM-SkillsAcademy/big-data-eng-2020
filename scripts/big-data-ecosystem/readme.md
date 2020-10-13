@@ -25,15 +25,15 @@ ______________________________________________________________
 2- Enable Autherization for HBase
 --------------------------------------------------------------
 1.  Open PuTTy shell and login with root
-2.  Check if port 53 is available; run the following command:
-      lsof -i :53
-      If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command
-      kill -9 \<PID\>
+2.  Check if port 53 is available; run the following command:  
+      lsof -i :53  
+      If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command  
+      kill -9 \<PID\>  
 3. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
-4. Check if all serices are started.
-   a. Click **\>** next to Services to expand
-   b. Notice the color of he dots (Green=Started and Red=Stopped)
-   c. If Stopped, please start them by clicking "..." next to services, and click "Start All"
+4. Check if all services are started.  
+   a. Click **\>** next to Services to expand  
+   b. Notice the color of he dots (Green=Started and Red=Stopped)  
+   c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
    d. Starting up of all services takes approximately 10 minutes.   
 
 5. Select "Dashboard" at left side bar
@@ -73,15 +73,16 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
    -  Transfer the users.csv file to the VM
       <br> scp users.csv root@**/<ip_address/>**:/root/bdescripts/users.csv      
 
-Open PuTTy shell and login with root
-2. Run the following command to download a set of scripts from IBM Skills Academy to /root directory in the VM
-<br> wget https://github.com/IBM-SkillsAcademy/big-data-eng-2020/raw/master/scripts/big-data-ecosystem/bdescripts.tar.gz
-3. Extract the compressed bdescript folder by using the following command :
+2. Open PuTTy shell and login with root
+3. Run the following command to download a set of scripts from IBM Skills Academy to /root directory in the VM
+<br> wget https://github.com/IBM-SkillsAcademy/big-data-eng-2020/raw/master/scripts/big-data-ecosystem/bdescripts.tar.gz  
+
+4. Extract the compressed bdescript folder by using the following command :
    <br> 
    tar zxvf bdescripts.tar.gz
-4. cd /root/bdescripts
-5. chmod 744 bde_envPrepare.sh
-6. ./bde_envPrepare.sh "**\<Ambari_Admin_password\>**" 
+5. cd /root/bdescripts
+6. chmod 744 bde_envPrepare.sh
+7. ./bde_envPrepare.sh "**\<Ambari_Admin_password\>**" 
 <br> where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 
 ---------------------------------------------------------------------------
