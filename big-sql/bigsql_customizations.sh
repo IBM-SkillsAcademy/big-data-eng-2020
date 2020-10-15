@@ -47,7 +47,7 @@ echo 'Editing profile variables for all students ...'
 command="\`id -Gn\`"
 echo "if [[ $command == *$DB2GRP* ]]; then" >> $profile_filename
 BIGSQL_HOME=/home/bigsql
-echo "  PATH=$PATH:$BIGSQL_HOME/.local/bin:$BIGSQL_HOME/bin" >> $profile_filename
+echo "  PATH=\$PATH:$BIGSQL_HOME/.local/bin:$BIGSQL_HOME/bin" >> $profile_filename
 echo "  export PATH" >> $profile_filename
 echo "  if [ -f /home/bigsql/sqllib/db2profile ]; then" >> $profile_filename
 echo "      . /home/bigsql/sqllib/db2profile" >> $profile_filename
