@@ -20,9 +20,8 @@ ______________________________________________________________
 8. Make sure that "User Status" is set to "Active"
 9. Select "Save".
 
-
 --------------------------------------------------------------
-2- Enable Autherization for HBase
+2- Starting hadoop services
 --------------------------------------------------------------
 1.  Open PuTTy shell and login with **root**
 2.  Check if port 53 is available; run the following command:  
@@ -36,19 +35,22 @@ ______________________________________________________________
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
    d. Starting up of all services takes approximately 10 minutes.   
 
-5. Select "Dashboard" at left side bar
-6. Select "HBase" under Services at left side bar
-7. Select "CONFIG" tab -> scrol down to "Security" section
-8. Turn on "Enable Authorization"
-9. Click "SAVE" button
-10. In "Save Configuration" dialog, type: "Enable HBase Authorization", then click "Save"
-11. Ambari will prompt for some recommended changes, accept it.
-12. Click "PROCEED ANYWAY" then "OK"
-13. Select "Restart" -> "Restart all affected" then click "OK"
-14. Confirm that all required services started successfully.
+--------------------------------------------------------------
+3- Enable Autherization for HBase
+--------------------------------------------------------------
+1. Select "Dashboard" at left side bar
+2. Select "HBase" under Services at left side bar
+3. Select "CONFIG" tab -> scrol down to "Security" section
+4. Turn on "Enable Authorization"
+5. Click "SAVE" button
+6. In "Save Configuration" dialog, type: "Enable HBase Authorization", then click "Save"
+7. Ambari will prompt for some recommended changes, accept it.
+8. Click "PROCEED ANYWAY" then "OK"
+9. Select "Restart" -> "Restart all affected" then click "OK"
+10. Confirm that all required services started successfully.
 
 --------------------------------------------------------------
-3- Enable Ranger Hive plugin
+4- Enable Ranger Hive plugin
 --------------------------------------------------------------
 1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password/>**)
 2. Select "Dashboard" at left side bar
