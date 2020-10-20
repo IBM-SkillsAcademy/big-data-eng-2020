@@ -33,7 +33,7 @@ ______________________________________________________________
    a. Click **\>** next to Services to expand  
    b. Notice the color of he dots (Green=Started and Red=Stopped)  
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
-   d. Starting up of all services takes approximately 10 minutes.   
+   d. Starting up of all services takes approximately 30 minutes.   
 
 --------------------------------------------------------------
 3- Enable Autherization for HBase
