@@ -9,11 +9,11 @@ To customize the VM for the Big SQL labs:
     `chown bigsql *.sh`  
 
  2. Copy **users.csv** file from /root/bdescripts to /root by running the command below:  
-    `cp /root/bdescripts/user.csv /root/user.csv`  
+    `cp /root/bdescripts/users.csv /root/users.csv`  
  3. Make sure of the following:  
     `bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh` are owned by **bigsql** user.  
     
- 4. Make sure the file permissions are **744** for the three scripts. eg.:  
+ 4. Make sure the file permissions are **744** for all the above-mentioned scripts. eg.:  
      `chmod 744 *.sh`    
  5. As **root**, run the first script only:  
     `cd /root`  
