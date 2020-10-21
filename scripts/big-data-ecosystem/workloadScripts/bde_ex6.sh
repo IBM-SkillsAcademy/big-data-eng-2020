@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo '\nStart executing Ex 6 for ' $1 ' - part 2'
-su $1
+echo 'Start executing Ex 6 for ' $1 ' - part 2'
 cd  /usr/hdp/current/spark2-client/examples/src/main/python/
 ls
 cat wordcount.py

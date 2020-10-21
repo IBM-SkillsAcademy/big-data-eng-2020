@@ -2,11 +2,7 @@
 
 echo 'Reseting Ex 3 for ' $1 ' - part 2'
 
-su $1 -c "hdfs dfs -rm -R Gutenberg"
-
-echo 'Reseting Ex 5 for ' $1 ' - part 1'
-
-su $1 -c "rm -R /home/$1/*"
+su $1 -c "hdfs dfs -rm -R /user/student0008/*"
 
 echo 'Reseting Ex 7 for ' $1 ' - part 2'
 

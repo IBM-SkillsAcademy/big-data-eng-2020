@@ -3,18 +3,14 @@
 #echo $1
 min=$1
 max=$2
-resetoption=$3
-
-#ip = $1
-#ambari_user = $3
-#ambari_pass = $4
+resetoption=$4
 
 function pause(){
     read -s -n 1 -p "Press any key to start executing exercises by all students simultaneously . . ."
     echo ""
 }
 
-if  (($1 >= $2) || [ -z "$1" ] || [ -z "$2" ]);
+if  (($1>=$2) || [ -z "$1" ] || [ -z "$2" ]);
 then echo "wrong parameters"; exit;
 fi
 
@@ -41,6 +37,6 @@ echo "Preparation done"
 pause
 
 echo "Start executing exercises"
-/bin/bash /workloadScripts/bde_executeExs.sh $1 $2
+/bin/time /workloadScripts/bde_executeExs.sh $1 $2 $3
 echo "All exercises done"
 

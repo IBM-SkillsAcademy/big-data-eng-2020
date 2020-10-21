@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo '\nStart executing Ex 5 for ' $1 ' - part 1'
-su $1
+echo 'Start executing Ex 5 for ' $1 ' - part 1'
 ls /labfiles/WordCount2/
 cp /labfiles/WordCount2/WordCount2.java .
 hadoop classpath
