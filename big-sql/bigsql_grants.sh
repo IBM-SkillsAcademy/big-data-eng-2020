@@ -9,6 +9,10 @@ function pause(){
 
 echo 'Granting db2 priviledges to all students ...'
 db2 connect to bigsql
+#increase the size of the transaction log to 100MB (100 * 1024 / 4 = 25600)
+db2 update db cfg for bigsql using LOGFILSIZ 20480
+db2stop force
+db2start
 db2 grant CONNECT, CREATETAB, IMPLICIT_SCHEMA, LOAD ON DATABASE TO GROUP $DB2GRP
 db2 grant DBADM on database to group $DB2GRP
 db2 revoke DBADM on database from group $DB2GRP
