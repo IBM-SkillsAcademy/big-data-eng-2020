@@ -14,7 +14,7 @@ db2 update db cfg for bigsql using LOGFILSIZ 20480
 db2 grant CONNECT, CREATETAB, IMPLICIT_SCHEMA, LOAD ON DATABASE TO GROUP $DB2GRP
 db2 grant DBADM on database to group $DB2GRP
 db2 revoke DBADM on database from group $DB2GRP
-#db2 connect reset
+db2 connect reset
 db2stop force
 db2start
 pause
