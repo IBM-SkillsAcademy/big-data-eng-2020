@@ -1,14 +1,19 @@
 #!/bin/bash
 
 numMem=$(dmidecode -t memory | grep  Size: | grep -v "No Module Installed" | awk '{sum+=$2}END{print sum}')
-if [ $numMem -lt 124000 ]; then
-echo "Error: Memory size is less than 124 GB"; exit;
+if [ $numMem -lt 145000 ]; then
+   read -p "Warning: The Memory size is less than 124 GB. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
+   if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    exit
+   fi
 fi
 echo "Memory size is $numMem";
 noOfCpus=$(dmidecode -t processor | grep 'Socket Designation: CPU #' | wc -l)
 if [ $noOfCpus -lt 12 ]; then
-   echo "Error: The number of CPUs is less than 12"
-   exit
+   read -p "Warning: The number of CPUs is less than 12. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
+   if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    exit
+   fi
 fi
 echo "The number of CPUs is $noOfCpus"
 
