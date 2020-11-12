@@ -10,7 +10,7 @@ function pause(){
     echo ""
 }
 
-if  (($1>=$2) || [ -z "$1" ] || [ -z "$2" ]);
+if  (($1 >= $2) || [ -z "$1" ] || [ -z "$2" ]);
 then echo "wrong parameters"; exit;
 fi
 

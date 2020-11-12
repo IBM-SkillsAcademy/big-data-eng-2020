@@ -1,10 +1,14 @@
 #!/bin/bash
 
+start_all=$(date +%s.%N)
 
-if  (( $1>=$2 ) || [ -z "$1" ] || [ -z "$2" ]);
+if  (( $1 >= $2 ) || [ -z "$1" ] || [ -z "$2" ]);
 then echo "wrong parameters"; exit;
 fi
 
+#clear log files
+echo "" > /workloadScripts/ex4_time
+echo "" > /workloadScripts/ex5_time
 
 for (( n=$1; n<=$2; n++ ))
 do
@@ -45,4 +49,9 @@ do
 done
 wait
 echo 'Execution for Exercise 7 ends for all students'
+
+duration_all=$(echo "$(date +%s.%N) - $start_all" | bc)
+execution_time_all=`printf "%.2f seconds" $duration_all`
+
+echo "$1 - Ex4:Part3 Execution Time: $execution_time_all"
 
