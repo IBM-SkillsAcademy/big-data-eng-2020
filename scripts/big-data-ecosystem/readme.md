@@ -70,20 +70,20 @@ ______________________________________________________________
 
 Steps to run the customization scripts for Big Data Ecosystem exercises
 --------------------------------------------------------------------------
-1. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv).
-   -  A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv
-   -  Transfer the users.csv file to the VM  
-    `scp users.csv root@<ip_address>:/root/bdescripts/users.csv`  
+1. Open PuTTy shell and login with **root**
 
-2. Open PuTTy shell and login with **root**
-
-3. Run the following command to download a set of scripts from IBM Skills Academy to /root directory in the VM  
+2. Run the following command to download a set of scripts from IBM Skills Academy to /root directory in the VM  
     `wget https://github.com/IBM-SkillsAcademy/big-data-eng-2020/raw/master/scripts/big-data-ecosystem/bdescripts.tar.gz`  
 
-4. Extract the compressed bdescript folder and change permissions by using the following command:  
+3. Extract the compressed bdescript folder and change permissions by using the following command:  
     `tar zxvf bdescripts.tar.gz`  
     `cd /root/bdescripts`  
     `chmod 744 bde_envPrepare.sh`  
+
+4. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv).
+   -  A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv
+   -  Transfer the users.csv file to the VM  
+    `scp users.csv root@<ip_address>:/root/bdescripts/users.csv`  
 
 5. Execute the script   
     `./bde_envPrepare.sh "<Ambari_Admin_password>"`  
