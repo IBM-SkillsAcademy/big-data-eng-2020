@@ -10,8 +10,9 @@ function pause(){
     echo ""
 }
 
-if  (($1 >= $2) || [ -z "$1" ] || [ -z "$2" ]);
-then echo "wrong parameters"; exit;
+if ((1 >= $2) || [ -z "$1" ] || [ -z "$2" ]); then
+    echo "wrong parameters"
+    exit
 fi
 
 echo "Preparing files for Ex 7 execution"
@@ -19,8 +20,9 @@ echo "Preparing files for Ex 7 execution"
 for (( n=$1; n<=$2; n++ ))
 do
     current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    /bin/bash /workloadScripts/bde_ex7_prepare.sh $current_student
+    /bin/bash /workloadScripts/bde_ex7_prepare.sh $current_student &
 done
+wait
 
 if [ "$resetoption" = "r" ]; then
 echo "Reseting data for Ex 7 execution"
@@ -28,8 +30,9 @@ echo "Reseting data for Ex 7 execution"
 for (( n=$1; n<=$2; n++ ))
 do
     current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    /bin/bash /workloadScripts/bde_reset.sh $current_student
+    /bin/bash /workloadScripts/Adel/bde_reset.sh $current_student &
 done
+wait
 fi
 
 echo "Preparation done"
@@ -37,6 +40,5 @@ echo "Preparation done"
 pause
 
 echo "Start executing exercises"
-/bin/time /workloadScripts/bde_executeExs.sh $1 $2 $3
+/workloadScripts/Adel/bde_executeExs.sh $1 $2 $3
 echo "All exercises done"
-
