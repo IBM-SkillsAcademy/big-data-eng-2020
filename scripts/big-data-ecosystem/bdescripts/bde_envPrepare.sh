@@ -16,6 +16,16 @@ if [ $noOfCpus -lt 12 ]; then
    fi
 fi
 echo "The number of CPUs is $noOfCpus"
+## validate ambari password
+AMBARI_HOST=localhost
+AMBARI_PORT=8080
+NETRC_FILE=/root/.netrc
+AMBARI_URLBASE=$AMBARI_HOST/$AMBARI_PORT
+AMBARI_CLUSTER_NAME=BDE_Cluster
+CLUSTER_LINE=`curl --netrc-file .netrc  -i -H 'X-Requested-By:ambari' $AMBARI_URLBASE | grep cluster_name | grep BDE_Cluster`
+if [ -z $CLUSTER_LINE ]; then
+   echo "wrong ambari password"
+   exit
 
 function pause(){
     read -s -n 1 -p "Press any key to continue . . ."
