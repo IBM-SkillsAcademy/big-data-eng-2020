@@ -1,0 +1,11 @@
+<connections>
+   <connection name="bigsql"
+               driver="db2"
+               server="dataengineer.ibm.com"
+               port="32051"
+   >
+      <username><![CDATA[student0001]]></username>
+      <password encrypted="true"><![CDATA[GMVj+y+AMJw=]]></password>
+      <catalog><![CDATA[BIGSQL]]></catalog>
+   </connection>
+</connections>

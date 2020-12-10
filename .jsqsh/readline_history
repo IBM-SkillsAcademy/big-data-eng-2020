@@ -1,0 +1,180 @@
+C
+1
+5
+t
+s
+y
+q
+\help
+\help commands
+\help vars
+\connect bigsql
+\show tables -e | more 
+select tabschema, tabname from syscat.tables fetch first 5 rows only;
+\history
+!!
+select tabschema, tabname from syscat.tables fetch first 5 rows only
+;
+select tabschema, tabname from syscat.tables
+go | more 
+select tabschema, colname, colno, typename, length 
+from syscat.columns
+fetch first 50 rows only 
+go > $HOME/test1.out
+quit
+select tabschema, tabname from syscat.tables fetch first 5 rows only;
+select tabschema, colname, colno, typename, length
+from syscat.columns
+fetch first 10 rows only;
+\connect bigsql 
+create hadoop table test1 (col1 int, col2 varchar(5));
+create hadoop table student0001.test1 (col1 int, col2 varchar(5));
+\tables
+insert into test1 values (1, 'one');
+\describe TEST1
+select tabschema, colname, colno, typename, length 
+from syscat.columns 
+where tabschema = USER and tabname= 'TEST1'; 
+drop table test1;
+\tables;
+q
+quit
+\connect bigsql 
+\tables
+	--Fetch the product name, quantity, and order method of products sold. 
+	--
+	--Query 1
+	SELECT pnumb.product_name, sales.quantity,
+	meth.order_method_en
+	FROM
+	sls_sales_fact sales,
+	sls_product_dim prod,
+	sls_product_lookup pnumb,
+	sls_order_method_dim meth
+	WHERE
+	pnumb.product_language='EN'
+	AND sales.product_key=prod.product_key
+	AND prod.product_number=pnumb.product_number
+	AND meth.order_method_key=sales.order_method_key
+	fetch first 20 rows only;  
+	--Fetch the product name, quantity, and order method
+	--of products sold through sales visits.  
+	--Query 2
+	SELECT pnumb.product_name, sales.quantity,
+	meth.order_method_en
+	FROM
+	sls_sales_fact sales,
+	sls_product_dim prod,
+	sls_product_lookup pnumb,
+	sls_order_method_dim meth
+	WHERE
+	pnumb.product_language='EN'
+	AND sales.product_key=prod.product_key
+	AND prod.product_number=pnumb.product_number
+	AND meth.order_method_key=sales.order_method_key
+	AND order_method_en='Sales visit'
+	FETCH FIRST 20 ROWS ONLY;
+	SELECT pll.product_line_en AS Product,
+	md.order_method_en AS Order_method,
+	sum(sf.QUANTITY) AS total
+	FROM  
+	sls_order_method_dim AS md,
+	sls_product_dim AS pd,
+	sls_product_line_lookup AS pll,
+	sls_product_brand_lookup AS pbl,
+	sls_sales_fact AS sf
+	WHERE
+	pd.product_key = sf.product_key
+	AND md.order_method_key = sf.order_method_key
+	AND pll.product_line_code = pd.product_line_code
+	AND pbl.product_brand_code = pd.product_brand_code
+	GROUP BY pll.product_line_en, md.order_method_en;
+quit
+\Connect bigsql
+create hadoop table if not exists sls_product_line_lookup_array
+(product_line_code      INT NOT NULL,
+description             ARRAY<VARCHAR(50)>);
+;
+go
+\connect bigsql
+create hadoop table if not exists sls_product_line_lookup_array (product_line_code      INT NOT NULL, description ARRAY<VARCHAR(50)>);
+LOAD HADOOP USING FILE URL '/user/student0001/sampledata/data/product_line_array.csv'WITH SOURCE PROPERTIES ('field.delimiter'='|', 'collection.items.delimiter'=',')INTO TABLE sls_product_line_lookup_array OVERWRITE;
+select product_line_code, description[1] as English, description[2] as German from sls_product_line_lookup_array where description[1] like 'Personal%';
+select * from sls_product_line_lookup_array;
+\set terminator = @;
+\set
+CREATE OR REPLACE FUNCTION new_final_price
+(
+  quantity INTEGER,
+  unit_sale_price DOUBLE,
+  discount_in_percent DOUBLE,
+  sales_tax_in_percent DOUBLE
+)
+RETURNS DOUBLE
+LANGUAGE SQL
+RETURN (quantity * unit_sale_price) * DOUBLE(1 - discount_in_percent / 100.0) * DOUBLE(1 + sales_tax_in_percent / 100.0) @
+VALUES new_final_price (1, 10, 20, 8.75)@
+SELECT sales_order_key, quantity, unit_sale_price, new_final_price(quantity, unit_sale_price, 20, 8.75) as final_price
+FROM sls_sales_fact
+ORDER BY sales_order_key
+FETCH FIRST 10 ROWS ONLY@
+SELECT sales_order_key, quantity, unit_sale_price,
+new_final_price(quantity, unit_sale_price, 20, 8.75) as final_price
+FROM sls_sales_fact
+WHERE new_final_price(quantity, unit_sale_price, 20, 8.75) > 7000
+ORDER BY sales_order_key
+FETCH FIRST 10 ROWS ONLY@
+\set terminator = ;;
+CREATE HADOOP TABLE IF NOT EXISTS big_sales_parquet 
+( 
+product_key    	INT NOT NULL, 
+product_name		VARCHAR(150), 
+quantity 		INT, 
+order_method_en   VARCHAR(90)
+)
+STORED AS parquetfile;
+INSERT into big_sales_parquet 
+SELECT sales.product_key, pnumb.product_name, sales.quantity,
+meth.order_method_en
+FROM
+sls_sales_fact sales,
+sls_product_dim prod,
+sls_product_lookup pnumb,
+sls_order_method_dim meth
+WHERE
+pnumb.product_language='EN'
+AND sales.product_key=prod.product_key
+AND prod.product_number=pnumb.product_number
+AND meth.order_method_key=sales.order_method_key  
+and sales.quantity > 5500;
+select * from big_sales_parquet;
+quit
+\exit
+\help
+\topics
+\help commands
+\quit
+\setup
+C
+1
+T
+5
+S
+y
+1
+T
+Q
+\setup
+C
+Q
+B
+\help
+\commands
+\setup
+C
+1
+5
+S
+Y
+Q
+\quit
