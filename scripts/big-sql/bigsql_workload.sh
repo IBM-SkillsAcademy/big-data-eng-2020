@@ -1,10 +1,17 @@
 #!/bin/bash
+export SCRIPTS_PATH=/workloadScripts
+export GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+#
+cp $GIT_REPO_DIR/scripts/big-sql/*.sh $SCRIPTS_PATH/
+cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sh $SCRIPTS_PATH/
+cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sql $SCRIPTS_PATH/
 
+#
 #echo $1
 min=$1
 max=$2
 resetoption=$4
-
+export JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 function pause(){
     read -s -n 1 -p "Press any key to start executing exercises by all students simultaneously . . ."
     echo ""
@@ -15,7 +22,7 @@ if ((1 >= $2) || [ -z "$1" ] || [ -z "$2" ]); then
     exit
 fi
 
-echo "Preparing files for Ex 7 execution"
+echo "Executing Exercise 2 for BigSQL"
 
 for (( n=$1; n<=$2; n++ ))
 do
@@ -23,7 +30,55 @@ do
     current_student_bigsql_passwd=email`echo $n`
     echo $current_student
     echo $current_student_bigsql_passwd
-    #/bin/bash /workloadScripts/bde_ex7_prepare.sh $current_student &
+    /bin/bash $SCRIPTS_PATH/bsq_ex2.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
+echo "Executing Exercise 3 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd=email`echo $n`
+    echo $current_student
+    echo $current_student_bigsql_passwd
+    /bin/bash $SCRIPTS_PATH/bsq_ex3.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
+echo "Executing Exercise 4 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd=email`echo $n`
+    echo $current_student
+    echo $current_student_bigsql_passwd
+    /bin/bash $SCRIPTS_PATH/bsq_ex4.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
+echo "Executing Exercise 5 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd=email`echo $n`
+    echo $current_student
+    echo $current_student_bigsql_passwd
+    /bin/bash $SCRIPTS_PATH/bsq_ex5.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
+echo "Executing Exercise 6 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd=email`echo $n`
+    echo $current_student
+    echo $current_student_bigsql_passwd
+    /bin/bash $SCRIPTS_PATH/bsq_ex6.sh  $current_student $current_student_bigsql_passwd &
 done
 wait
 

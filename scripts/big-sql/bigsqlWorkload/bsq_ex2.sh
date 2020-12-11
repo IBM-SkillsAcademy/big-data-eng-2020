@@ -2,7 +2,8 @@
 
 echo 'Start executing Ex 2 for ' $1 ' - part 1'
 
-su $1 -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /bigsqlWorkload/bsq_ex2_part1.sql"
+
+su $1 -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /bigsqlWorkload/bsq_ex2_part1.sql" -C $JSQSH_CONF -U $1 -P $2
 
 echo 'Start executing Ex 2 for ' $1 ' - part 2'
 
