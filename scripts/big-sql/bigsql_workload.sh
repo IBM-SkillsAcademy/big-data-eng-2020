@@ -5,13 +5,14 @@ export GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 cp $GIT_REPO_DIR/scripts/big-sql/*.sh $SCRIPTS_PATH/
 cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sh $SCRIPTS_PATH/
 cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sql $SCRIPTS_PATH/
-
+chmod a+x $SCRIPTS_PATH/*.sh
+export JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 #
 #echo $1
 min=$1
 max=$2
 resetoption=$4
-export JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
+
 function pause(){
     read -s -n 1 -p "Press any key to start executing exercises by all students simultaneously . . ."
     echo ""
