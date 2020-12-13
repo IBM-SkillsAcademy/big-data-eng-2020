@@ -26,7 +26,19 @@ if ((1 >= $2) || [ -z "$1" ] || [ -z "$2" ]); then
     exit
 fi
 
-echo "Executing Exercise 2 for BigSQL"
+echo "Copying config dir"
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd=email`echo $n`
+    echo $current_student
+    echo $current_student_bigsql_passwd
+    /bin/cp -r $JSQSH_CONF  /home/$current_student
+	chown -R $current_student /home/$current_student/.jsqsh
+	chgrp -R hadoop /home/$current_student/.jsqsh 
+done
+wait
+
 
 for (( n=$1; n<=$2; n++ ))
 do
