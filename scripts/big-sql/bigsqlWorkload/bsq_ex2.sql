@@ -2,6 +2,7 @@ create hadoop table test1 (col1 int, col2 varchar(5));
 insert into test1 values (1,'one');
 select tabschema, colname, colno, typename, length from syscat.columns where tabname = 'TEST1';
 
+
 CREATE HADOOP TABLE IF NOT EXISTS go_region_dim
 ( country_key   INT NOT NULL
 , country_code  INT NOT NULL

@@ -1,0 +1,1 @@
+select product_line_code, description[1] as English, description[2] as German from sls_product_line_lookup_array where description[1] like 'Personal%';
