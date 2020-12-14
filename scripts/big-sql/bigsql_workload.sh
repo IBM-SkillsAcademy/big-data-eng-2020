@@ -10,6 +10,7 @@ git pull
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sql $SCRIPTS_PATH/
 chmod a+x $SCRIPTS_PATH/*.sh
 export JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
+#export JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh
 #
 #echo $1
 min=$1
