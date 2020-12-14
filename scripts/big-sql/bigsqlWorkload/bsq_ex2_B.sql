@@ -1,6 +1,6 @@
-load hadoop using file url '/user/$1/sampledata/data/GOSALESDW.GO_REGION_DIM.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') INTO TABLE GO_REGION_DIM overwrite;
+load hadoop using file url '/user/username/sampledata/data/GOSALESDW.GO_REGION_DIM.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') INTO TABLE GO_REGION_DIM overwrite;
 
-load hadoop using file url '/user/$1/sampledata/data/GOSALESDW.SLS_ORDER_METHOD_DIM.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') INTO TABLE SLS_ORDER_METHOD_DIM overwrite;
+load hadoop using file url '/user/username/sampledata/data/GOSALESDW.SLS_ORDER_METHOD_DIM.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') INTO TABLE SLS_ORDER_METHOD_DIM overwrite;
 
 load hadoop using file url '/user/username/sampledata/data/GOSALESDW.SLS_PRODUCT_BRAND_LOOKUP.txt' with SOURCE PROPERTIES ('field.delimiter'='\t') INTO TABLE SLS_PRODUCT_BRAND_LOOKUP overwrite;
 
