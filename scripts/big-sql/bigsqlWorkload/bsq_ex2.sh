@@ -19,6 +19,7 @@ su $current_student -c "hadoop fs -copyFromLocal /usr/ibmpacks/bigsql/6.0.0.0/bi
 su $current_student -c "hadoop fs -ls /user/$current_student/sampledata/data"
 
 echo 'Start executing Ex 2 for ' $current_student ' - part 4,5,6'
+su $current_student -c "hadoop fs -ls /user/$current_student/sampledata/data/GOSALESDW.SLS_PRODUCT_LOOKUP.txt"
 
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex2_B.sql $SCRIPTS_PATH/bsq_ex2_B_$current_student.sql
 sed -i 's/username/$current_student/' $SCRIPTS_PATH/bsq_ex2_B_$current_student.sql
