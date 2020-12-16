@@ -1,5 +1,22 @@
 #!/bin/bash
 
+#!/bin/bash
+export SCRIPTS_PATH=/workloadScripts
+export GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+
+cd $GIT_REPO_DIR
+git pull
+#
+/bin/cp $GIT_REPO_DIR/scripts/big-sql/*.sh $SCRIPTS_PATH/
+/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sh $SCRIPTS_PATH/
+/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sql $SCRIPTS_PATH/
+chmod a+x $SCRIPTS_PATH/*.sh
+export JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
+#export JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh
+n=12
+
+
+
 current_student=$1
 current_student_bigsql_passwd=$2
 echo 'Start executing Ex 2 for ' $current_student ' - part 1,2'
