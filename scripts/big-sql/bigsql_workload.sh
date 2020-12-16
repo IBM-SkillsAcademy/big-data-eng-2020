@@ -63,29 +63,8 @@ do
 done
 wait
 
-echo "Executing Exercise 4 for BigSQL"
 
-for (( n=$1; n<=$2; n++ ))
-do
-    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    current_student_bigsql_passwd=email`echo $n`
-    echo $current_student
-    echo $current_student_bigsql_passwd
-    /bin/bash $SCRIPTS_PATH/bsq_ex4.sh  $current_student $current_student_bigsql_passwd &
-done
-wait
 
-echo "Executing Exercise 5 for BigSQL"
-
-for (( n=$1; n<=$2; n++ ))
-do
-    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    current_student_bigsql_passwd=email`echo $n`
-    echo $current_student
-    echo $current_student_bigsql_passwd
-    /bin/bash $SCRIPTS_PATH/bsq_ex5.sh  $current_student $current_student_bigsql_passwd &
-done
-wait
 
 echo "Executing Exercise 6 for BigSQL"
 

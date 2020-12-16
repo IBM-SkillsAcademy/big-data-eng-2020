@@ -17,15 +17,14 @@ su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsq
 
 echo 'Start executing Ex 6 for ' $current_student 
 
-su $current_student -c "hadoop fs -mkdir /user/$current_student/sampledata"
-su $current_student -c "hadoop fs -ls /user/$current_student/"
-su $current_student -c "hadoop fs -copyFromLocal /usr/ibmpacks/bigsql/6.0.0.0/bigsql/samples/data/ /user/$current_student/sampledata"
-su $current_student -c "hadoop fs -ls /user/$current_student/sampledata/data"
 
-echo 'Start executing Ex 2 for ' $current_student ' - part 4,5,6'
-su $current_student -c "hadoop fs -ls /user/$current_student/sampledata/data/GOSALESDW.SLS_PRODUCT_LOOKUP.txt"
 
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex6_A.sql $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
+sed -i 's/db2_username/$DB2_USERNAME/' $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
+sed -i 's/db2_password/$DB2_PASSWORD/' $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
+sed -i 's/db2_hostname/$DB2_HOSTNAME/' $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
+sed -i 's/db2_port/$DB2_PORT/' $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
+sed -i 's/db2_name/$DB2_DB/' $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
 sed -i 's/username/$current_student/' $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
 su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex6_A_$current_student.sql  -U $current_student -P $current_student_bigsql_passwd"
 rm $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
