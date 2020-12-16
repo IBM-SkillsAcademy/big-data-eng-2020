@@ -60,6 +60,6 @@ su $current_student -c "hdfs dfs -copyFromLocal /usr/ibmpacks/bigsql/6.0.0.0/big
 su $current_student -c "hdfs dfs -ls /user/$current_student/bigsql_lab/sls_product_dim"
 
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex2_C.sql $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql
-sed -i "'s/username/$current_student/' $SCRIPTS_PATH/bsq_ex2_D_$current_student.sql"
+sed -i "'s/username/$current_student/' $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql"
 su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_C_$current_student.sql  -U $current_student -P $2"
 rm $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql
