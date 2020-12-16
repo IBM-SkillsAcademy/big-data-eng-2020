@@ -1,5 +1,5 @@
 create server db2_on_cloud type DB2/UDB version 11 
-authorization 'db2_username' password "db2_password" 
+authorization db2_username password "db2_password" 
 options (host 'db2_hostname', port 'db2_port', dbname 'db2_name', password 'Y');
 
 
