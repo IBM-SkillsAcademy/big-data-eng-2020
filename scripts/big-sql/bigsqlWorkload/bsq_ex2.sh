@@ -2,12 +2,11 @@
 
 current_student=$1
 current_student_bigsql_passwd=$2
-echo 'Start executing Ex 2 for ' $current_student ' - part 1'
+echo 'Start executing Ex 2 for ' $current_student ' - part 1,2'
 
 
 su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_A.sql  -U $current_student -P $current_student_bigsql_passwd"
 
-echo 'Start executing Ex 2 for ' $current_student ' - part 2'
 
 #su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /home/bigsql/labfiles/bigsql/BIG_SQL_Data_Analysis/1_CREATE\ TABLE\ statements.sql"
 #su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /bigsqlWorkload/bsq_ex2_part2.sql"
@@ -23,7 +22,7 @@ echo 'Start executing Ex 2 for ' $current_student ' - part 4,5,6'
 
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex2_B.sql $SCRIPTS_PATH/bsq_ex2_B_$current_student.sql
 sed -i 's/username/$current_student/' $SCRIPTS_PATH/bsq_ex2_B_$current_student.sql
-su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_B_$current_student.sql  -U $current_student -P $2"
+su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_B_$current_student.sql  -U $current_student -P $current_student_bigsql_passwd"
 rm $SCRIPTS_PATH/bsq_ex2_B_$current_student.sql
 
 
@@ -42,7 +41,7 @@ su $current_student -c "hdfs dfs -copyFromLocal /usr/ibmpacks/bigsql/6.0.0.0/big
 
 su $current_student -c "hdfs dfs -ls /user/$current_student/bigsql_lab/sls_product_dim"
 
-/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex2_D.sql $SCRIPTS_PATH/bsq_ex2_D_$current_student.sql
+/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex2_C.sql $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql
 sed -i "'s/username/$current_student/' $SCRIPTS_PATH/bsq_ex2_D_$current_student.sql"
-su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_D_$current_student.sql  -U $current_student -P $2"
-rm $SCRIPTS_PATH/bsq_ex2_D_$current_student.sql
+su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_C_$current_student.sql  -U $current_student -P $2"
+rm $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql

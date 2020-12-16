@@ -23,3 +23,6 @@ DROP VIEW if exists myview;
 DELETE FROM SALES_REPORT;
 drop table if exists sales_report;
 
+DELETE FROM sls_product_dim_external;
+drop table if exists sls_product_dim_external;
+
