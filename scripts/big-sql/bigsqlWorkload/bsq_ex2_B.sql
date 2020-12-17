@@ -23,6 +23,7 @@ select count(*) from SLS_PRODUCT_DIM;
 select count(*) from SLS_PRODUCT_LINE_LOOKUP;
 select count(*) from SLS_SALES_FACT;
 select count(*) from MRK_PROMOTION_FACT;
+commit;
 
 create view myview as 
 	select product_name, sales.product_key, mkt.quantity, 
