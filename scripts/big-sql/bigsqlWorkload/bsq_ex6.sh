@@ -23,31 +23,27 @@ echo 'Start executing Ex 6 for ' $current_student
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex6_A.sql $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex6_B.sql $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 
-su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex6_A_$current_student.sql  -U $current_student -P $current_student_bigsql_passwd"
-rm $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
-
 sed -i "s/db2_username/$DB2_USERNAME/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 sed -i "s/db2_password/$DB2_PASSWORD/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 sed -i "s/db2_hostname/$DB2_HOSTNAME/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 sed -i "s/db2_port/$DB2_PORT/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 sed -i "s/db2_name/$DB2_DB/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 sed -i "s/username/$current_student/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
+
+su bigsql -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex6_A_$current_student.sql  -U bigsql -P $BIGSQL_PASSWD"
+#rm $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
+
+sed -i "s/db2_username/$DB2_USERNAME/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
+#sed -i "s/db2_password/$DB2_PASSWORD/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
+#sed -i "s/db2_hostname/$DB2_HOSTNAME/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
+#sed -i "s/db2_port/$DB2_PORT/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
+#sed -i "s/db2_name/$DB2_DB/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
+#sed -i "s/username/$current_student/" $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 #echo 'Start executing Ex 2 for ' $current_student ' - part 7'
 
+su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex6_A_$current_student.sql  -U bigsql -P $current_student_bigsql_passwd"
+#rm $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
 
 	
 	
 
-su $current_student -c "hdfs dfs -mkdir /user/$current_student/bigsql_lab"
-su $current_student -c "hdfs dfs -mkdir /user/$current_student/bigsql_lab/sls_product_dim"
-su $current_student -c "hdfs dfs -chmod -R 777 /user/$current_student/bigsql_lab"
-
-su $current_student -c "hdfs dfs -copyFromLocal /usr/ibmpacks/bigsql/6.0.0.0/bigsql/samples/data/GOSALESDW.SLS_PRODUCT_DIM.txt /user/$current_student/bigsql_lab/sls_product_dim/SLS_PRODUCT_DIM.txt"
-
-
-su $current_student -c "hdfs dfs -ls /user/$current_student/bigsql_lab/sls_product_dim"
-
-/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex2_C.sql $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql
-sed -i "'s/username/$current_student/' $SCRIPTS_PATH/bsq_ex2_D_$current_student.sql"
-su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_C_$current_student.sql  -U $current_student -P $2"
-rm $SCRIPTS_PATH/bsq_ex2_C_$current_student.sql
