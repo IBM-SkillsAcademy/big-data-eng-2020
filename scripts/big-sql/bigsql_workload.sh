@@ -31,9 +31,6 @@ echo "Copying config dir"
 for (( n=$1; n<=$2; n++ ))
 do
     current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    current_student_bigsql_passwd=email`echo $n`
-    echo $current_student
-    echo $current_student_bigsql_passwd
     /bin/cp -r $JSQSH_CONF  /home/$current_student
 	chown -R $current_student /home/$current_student/.jsqsh
 	chgrp -R hadoop /home/$current_student/.jsqsh 
@@ -41,50 +38,13 @@ done
 wait
 
 
-for (( n=$1; n<=$2; n++ ))
-do
-    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    current_student_bigsql_passwd=email`echo $n`
-    echo $current_student
-    echo $current_student_bigsql_passwd
-    /bin/bash $SCRIPTS_PATH/bsq_ex2.sh  $current_student $current_student_bigsql_passwd &
-done
-wait
-
-echo "Executing Exercise 3 for BigSQL"
-
-for (( n=$1; n<=$2; n++ ))
-do
-    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    current_student_bigsql_passwd=email`echo $n`
-    echo $current_student
-    echo $current_student_bigsql_passwd
-    /bin/bash $SCRIPTS_PATH/bsq_ex3.sh  $current_student $current_student_bigsql_passwd &
-done
-wait
-
-
-
-
-echo "Executing Exercise 6 for BigSQL"
-
-for (( n=$1; n<=$2; n++ ))
-do
-    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    current_student_bigsql_passwd=email`echo $n`
-    echo $current_student
-    echo $current_student_bigsql_passwd
-    /bin/bash $SCRIPTS_PATH/bsq_ex6.sh  $current_student $current_student_bigsql_passwd &
-done
-wait
-
 if [ "$resetoption" = "r" ]; then
-echo "Reseting data for Ex 7 execution"
+echo "Reseting data for all exercises"
 
 for (( n=$1; n<=$2; n++ ))
 do
     current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    #/bin/bash /workloadScripts/Adel/bde_reset.sh $current_student &
+    /bin/bash /workloadScripts/Adel/bde_reset.sh $current_student &
 done
 wait
 fi
@@ -94,5 +54,35 @@ echo "Preparation done"
 pause
 
 echo "Start executing exercises"
-#/workloadScripts/Adel/bde_executeExs.sh $1 $2 $3
+
+echo "Executing Exercise 2 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd="$3$n"
+    /bin/bash $SCRIPTS_PATH/bsq_ex2.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
+echo "Executing Exercise 3 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd="$3$n"
+    /bin/bash $SCRIPTS_PATH/bsq_ex3.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
+echo "Executing Exercise 6 for BigSQL"
+
+for (( n=$1; n<=$2; n++ ))
+do
+    current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
+    current_student_bigsql_passwd="$3$n"
+    /bin/bash $SCRIPTS_PATH/bsq_ex6.sh  $current_student $current_student_bigsql_passwd &
+done
+wait
+
 echo "All exercises done"
