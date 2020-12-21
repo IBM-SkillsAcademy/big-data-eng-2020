@@ -2,7 +2,7 @@
 export SCRIPTS_PATH=/workloadScripts
 export GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 
-cd $GIT_REPO_DIR
+cd $GIT_REPO_DIR #toberemoved
 git pull  #toberemoved
 #
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/*.sh $SCRIPTS_PATH/
@@ -15,6 +15,7 @@ export JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 #echo $1
 min=$1
 max=$2
+
 resetoption=$4
 
 function pause(){
@@ -35,18 +36,19 @@ do
 	chown -R $current_student /home/$current_student/.jsqsh
 	chgrp -R hadoop /home/$current_student/.jsqsh 
 done
-wait
+
 
 
 if [ "$resetoption" = "r" ]; then
-echo "Reseting data for all exercises"
 
 for (( n=$1; n<=$2; n++ ))
 do
     current_student=student`echo $n | awk '{ printf "%04i\n", $0 }'`
-    /bin/bash /workloadScripts/Adel/bde_reset.sh $current_student &
+    current_student_bigsql_passwd="$3$n"
+    /bin/bash $SCRIPTS_PATH/bsq_ex6_clear.sh $current_student $current_student_bigsql_passwd
+	/bin/bash $SCRIPTS_PATH/bsq_ex3_clear.sh $current_student $current_student_bigsql_passwd
+	/bin/bash $SCRIPTS_PATH/bsq_ex2_clear.sh $current_student $current_student_bigsql_passwd
 done
-wait
 fi
 
 echo "Preparation done"
@@ -75,6 +77,9 @@ do
 done
 wait
 
+echo "Granting access for students "
+su bigsql -c "/home/bigsql/bigsql_grantDBADM.sh"
+
 echo "Executing Exercise 6 for BigSQL"
 
 for (( n=$1; n<=$2; n++ ))
@@ -84,5 +89,6 @@ do
     /bin/bash $SCRIPTS_PATH/bsq_ex6.sh  $current_student $current_student_bigsql_passwd &
 done
 wait
-
+echo "Revoking access for students "
+su bigsql -c "/home/bigsql/bigsql_revokeDBADM.sh"
 echo "All exercises done"

@@ -26,6 +26,7 @@ sed -i "s/db2_port/$DB2_PORT/" $SCRIPTS_PATH/bsq_ex6_A_clear_$current_student.sq
 sed -i "s/db2_name/$DB2_DB/" $SCRIPTS_PATH/bsq_ex6_B_clear_$current_student.sql
 sed -i "s/username/$current_student/" $SCRIPTS_PATH/bsq_ex6_A_clear_$current_student.sql
 
+su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex6_A_clear_$current_student.sql  -U $current_student -P $current_student_bigsql_passwd "
 su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex6_B_clear_$current_student.sql  -U $current_student -P $current_student_bigsql_passwd "
 #rm $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
 
