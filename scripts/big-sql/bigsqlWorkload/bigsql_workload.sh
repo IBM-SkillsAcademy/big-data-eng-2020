@@ -3,7 +3,7 @@ export SCRIPTS_PATH=/workloadScripts
 export GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 
 cd $GIT_REPO_DIR
-git pull
+git pull  #toberemoved
 #
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/*.sh $SCRIPTS_PATH/
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sh $SCRIPTS_PATH/
