@@ -3,6 +3,6 @@ create server db2_on_cloud type DB2/UDB version 11
     options (host 'db2_hostname', port 'db2_port', dbname 'db2_name', password 'Y');
 
 
-create user mapping for username server db2_on_cloud options (REMOTE_AUTHID 'db2_username', REMOTE_PASSWORD 'db2_password');
+create user mapping for username server db2_on_cloud;
 
 
