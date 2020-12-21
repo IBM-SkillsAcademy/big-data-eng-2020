@@ -4,8 +4,8 @@ current_student=$1
 current_student_bigsql_passwd=$2
 echo 'Start executing Ex 2 for ' $current_student ' - part 1,2'
 
-cd $GIT_REPO_DIR
-source  scripts/big-sql/bigsqlWorkload/env_variables.sh
+
+source  $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/env_variables.sh
 #su $current_student -c "/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql < /workloadScripts/bsq_ex2_A.sql  -U $current_student -P $current_student_bigsql_passwd"
 
 
