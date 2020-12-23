@@ -16,16 +16,13 @@ if [ $noOfCpus -lt 12 ]; then
    fi
 fi
 echo "The number of CPUs is $noOfCpus"
+
 ## validate ambari password
-AMBARI_HOST=localhost
-AMBARI_PORT=8080
-NETRC_FILE=/root/.netrc
-AMBARI_URLBASE=$AMBARI_HOST/$AMBARI_PORT
-AMBARI_CLUSTER_NAME=BDE_Cluster
-CLUSTER_LINE=`curl --netrc-file .netrc  -i -H 'X-Requested-By:ambari' $AMBARI_URLBASE | grep cluster_name | grep BDE_Cluster`
-if [ -z $CLUSTER_LINE ]; then
-   echo "wrong ambari password"
+checkpswd=`curl --silent -u admin:$3 -X GET http://localhost:8080/api/v1/clusters/BDE_Cluster/services/HIVE?fields=ServiceInfo | grep "\"state\" : \"STARTED\""`
+if [ -z $checkpswd ]; then
+   echo "wrong ambari password or Hive service is not started"
    exit
+fi
 
 function pause(){
     read -s -n 1 -p "Press any key to continue . . ."
