@@ -1,16 +1,16 @@
 #!/bin/bash
 
 numMem=$(dmidecode -t memory | egrep  -i '^(\s|\t)+Size' | grep -v "No Module Installed" | awk '{sum+=$2}END{print sum}')
-if [ $numMem -lt 124048 ]; then
-   read -p "Warning: The Memory size is less than 124 GB. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
+if [ $numMem -lt 140000 ]; then
+   read -p "Warning: The Memory size is less than 140 GB. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit
    fi
 fi
 echo "Memory size is $numMem";
 noOfCpus=$(dmidecode -t processor | grep 'Socket Designation: CPU ' | wc -l)
-if [ $noOfCpus -lt 12 ]; then
-   read -p "Warning: The number of CPUs is less than 12. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
+if [ $noOfCpus -lt 30 ]; then
+   read -p "Warning: The number of CPUs is less than 30. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit
    fi
@@ -18,7 +18,6 @@ fi
 echo "The number of CPUs is $noOfCpus"
 
 ## validate ambari password
-echo "curl --silent -u admin:$1 -X GET http://localhost:8080/api/v1/clusters/BDE_Cluster/services/HIVE?fields=ServiceInfo | grep '\"state\" : \"STARTED\"'"
 checkpswd=$(curl --silent -u admin:$1 -X GET http://localhost:8080/api/v1/clusters/BDE_Cluster/services/HIVE?fields=ServiceInfo | grep '\"state\" : \"STARTED\"')
 echo $checkpswd
 if [ -z "$checkpswd" ]; then
