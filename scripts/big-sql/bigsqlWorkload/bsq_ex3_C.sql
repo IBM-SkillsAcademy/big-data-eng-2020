@@ -19,12 +19,12 @@ FROM sls_sales_fact
 ORDER BY sales_order_key
 FETCH FIRST 10 ROWS ONLY@
 
-SELECT sales_order_key, quantity, unit_sale_price,
-new_final_price(quantity, unit_sale_price, 20, 8.75) as final_price
-FROM sls_sales_fact
-WHERE new_final_price(quantity, unit_sale_price, 20, 8.75) > 7000
-ORDER BY sales_order_key
-@
+--SELECT sales_order_key, quantity, unit_sale_price,
+--new_final_price(quantity, unit_sale_price, 20, 8.75) as final_price
+--FROM sls_sales_fact
+--WHERE new_final_price(quantity, unit_sale_price, 20, 8.75) > 7000
+--ORDER BY sales_order_key
+--@
 
 CREATE HADOOP TABLE IF NOT EXISTS big_sales_parquet 
 ( 
@@ -52,6 +52,6 @@ AND prod.product_number=pnumb.product_number
 AND meth.order_method_key=sales.order_method_key  
 and sales.quantity > 5500@
 
-select * from big_sales_parquet@
+--select * from big_sales_parquet@
 
 

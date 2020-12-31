@@ -1,0 +1,1 @@
+select * from syscat.tables where tabschema = USER;
