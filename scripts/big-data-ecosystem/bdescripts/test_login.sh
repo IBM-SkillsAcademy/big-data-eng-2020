@@ -9,6 +9,6 @@ echo $PASSWORD
 salt=$(sudo getent shadow $USERNAME | cut -d$ -f3)
 epassword=$(sudo getent shadow $USERNAME | cut -d: -f2)
 match=$(python -c 'import crypt; print crypt.crypt("'"${PASSWORD}"'", "$6$'${salt}'")')
-[ ${match} == ${epassword} ] && echo "Password matches" || echo "Password doesn't match"
+echo $USERNAME && s[ ${match} == ${epassword} ] && echo "Password matches" || echo "Password doesn't match"
 
 
