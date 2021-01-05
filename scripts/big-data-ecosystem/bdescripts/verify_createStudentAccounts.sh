@@ -6,7 +6,7 @@ then
   exit 1
 else
   read -s -n 1 -p "Press any key to continue"
-
+fi
 
 awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," } 
     { 0
