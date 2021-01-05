@@ -1,6 +1,7 @@
 
 export GROUPID=`grep students /etc/group | cut -f 3 -d :`
-if [-z "$GROUPID" ]
+echo $GROUPID
+if [ -z "$GROUPID" ]
 then 
   read -s -n 1 -p "Press any key to exit"
   exit 1
