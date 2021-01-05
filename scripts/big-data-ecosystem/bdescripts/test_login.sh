@@ -11,7 +11,7 @@ epassword=$(sudo getent shadow $USERNAME | cut -d: -f2)
 match=$(python -c 'import crypt; print crypt.crypt("'"${PASSWORD}"'", "$6$'${salt}'")')
 # s[ ${match} == ${epassword} ] && echo "$USERNAME Password matches" || echo "$USERNAME Password doesn't match"
 
-if s[ ${match} == ${epassword} ]
+if [ ${match} == ${epassword} ]
 then 
     echo "$USERNAME Password matches"
 else 
