@@ -10,7 +10,7 @@ else
 fi
 
 awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," } 
-    { 0
+    { 
       split($2, email, /@/);
       #system("useradd -m -g students "$1); 
       #system("echo \"" email[1] "\" | passwd --stdin "$1);
