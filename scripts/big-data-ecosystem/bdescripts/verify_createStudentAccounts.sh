@@ -14,7 +14,7 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
       split($2, email, /@/);
       #system("useradd -m -g students "$1); 
       #system("echo \"" email[1] "\" | passwd --stdin "$1);
-      system("test_login.sh $1 email[1]");
+      system("./test_login.sh $1 email[1]");
       #system("su hdfs -c '\''hdfs dfs -mkdir -p /user/"$1"'\''");
       #system("su hdfs -c '\''hdfs dfs -chown "$1":hdfs /user/"$1"'\''");
       #system("su hdfs -c '\''hdfs dfs -setfacl -R --set  user::rwx,group::r--,other::r-x /user/"$1"'\''");
