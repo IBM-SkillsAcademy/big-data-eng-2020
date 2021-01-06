@@ -11,7 +11,7 @@ Steps to run the workload scripts for Big Data Ecosystem exercises
 2. `cd /`
 
 3. Run the following command to download a set of scripts from IBM Skills Academy to / directory in the VM  
-    `wget https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/workloadScripts.tar.gz`  
+    `wget https://raw.githubusercontent.com/IBM-SkillsAcademy/big-data-eng-2020/master/scripts/big-data-ecosystem/workloadScripts.tar.gz`  
 
 4. Extract the compressed bdescript folder and change permissions by using the following command:  
     `tar zxvf workloadScripts.tar.gz`  
