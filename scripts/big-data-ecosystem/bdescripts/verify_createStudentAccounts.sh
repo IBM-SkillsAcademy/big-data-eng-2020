@@ -1,3 +1,7 @@
+cd /root/bdescripts
+rm success_create_student_A.txt
+fail_create_student_A.txt 
+
 
 export GROUPID=`grep students /etc/group | cut -f 3 -d :`
 echo $GROUPID
@@ -29,4 +33,4 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
     }
 ' users.csv
 
-hadoop fs -ls -h /user/ >> test_create_student_C.txt 
+hadoop fs -ls -h /user/ | grep student | cut -f 5 -d " " >> test_create_student_C.txt 
