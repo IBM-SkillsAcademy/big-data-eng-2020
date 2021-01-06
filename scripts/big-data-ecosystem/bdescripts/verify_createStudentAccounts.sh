@@ -1,3 +1,4 @@
+## Remove temp files 
 cd /root/bdescripts
 rm -rf success_create_student_A.txt
 rm -rf fail_create_student_A.txt 
@@ -62,3 +63,4 @@ else
   cat test_create_student_C.txt | grep -v drwxr--r-x
   exit 1
 fi
+
