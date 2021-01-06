@@ -37,8 +37,8 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
 hadoop fs -ls -h /user/ | grep student > test_create_student_C.txt 
 cat test_create_student_C.txt  | grep hdfs | grep drwxr--r-x | cut -f 5 -d " " | sort | uniq > students_dir.txt 
 
-MD5_DIR=`md5sum students_dir.txt`
-MD5_USERS=`md5sum users_list.txt` 
+MD5_DIR=(`md5sum students_dir.txt`)
+MD5_USERS=(`md5sum users_list.txt`) 
 if [ "$MD5_DIR" == "$MD5_USERS" ]; then
   echo "user directories created successfully"
 else 
