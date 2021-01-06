@@ -39,7 +39,7 @@ cat test_create_student_C.txt  | grep hdfs | grep drwxr--r-x | cut -f 5 -d " " |
 
 MD5_DIR=`md5sum students_dir.txt`
 MD5_USERS=`md5sum users_list.txt` 
-if ["$MD5_DIR" == "$MD5_USERS"]; then
+if [ "$MD5_DIR" == "$MD5_USERS" ]; then
   echo "user directories created successfully"
 else 
   echo "user directories creation has problems, review list of directories and check their owners, groups and permissions for more details"
