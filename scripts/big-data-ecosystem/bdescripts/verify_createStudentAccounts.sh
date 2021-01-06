@@ -9,11 +9,11 @@ echo $GROUPID
 if [ -z "$GROUPID" ]
 then 
   echo "group students creation failed"
-  read -s -n 1 -p "Press any key to exit\n"
+  read -s -n 1 -p "Press any key to exit"
   
   exit 1
 else
-  echo "group students creation succeeded"
+  echo -e "group students creation succeeded\n"
 
   read -s -n 1 -p "Press any key to continue\n"
 fi
