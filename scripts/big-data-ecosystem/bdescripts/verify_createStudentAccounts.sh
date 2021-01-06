@@ -1,8 +1,8 @@
 cd /root/bdescripts
-rm success_create_student_A.txt
-rm fail_create_student_A.txt 
-rm students_dir.txt
-rm test_create_student_C.txt 
+rm -rf success_create_student_A.txt
+rm -rf fail_create_student_A.txt 
+rm -rf students_dir.txt
+rm -rf test_create_student_C.txt 
 
 export GROUPID=`grep students /etc/group | cut -f 3 -d :`
 echo $GROUPID
@@ -35,7 +35,15 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
 ' users.csv
 
 hadoop fs -ls -h /user/ | grep student > test_create_student_C.txt 
-cat test_create_student_C.txt  | cut -f 5 -d " " | sort | uniq > students_dir.txt 
+cat test_create_student_C.txt  | grep hdfs | grep drwxr--r-x | cut -f 5 -d " " | sort | uniq > students_dir.txt 
 
-md5sum students_dir.txt 
-md5sum users_list.txt
+MD5_DIR=`md5sum students_dir.txt`
+MD5_USERS=`md5sum users_list.txt` 
+if ["$MD5_DIR" == "$MD5_USERS"]
+  echo "user directories created successfully"
+else 
+  echo "user directories creation has problems, review list of directories and check their owners, groups and permissions for more details"
+  cat test_create_student_C.txt | grep -v hdfs
+  cat test_create_student_C.txt | grep -v drwxr--r-x
+  exit 1
+fi
