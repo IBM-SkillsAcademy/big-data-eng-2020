@@ -36,3 +36,6 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
 
 hadoop fs -ls -h /user/ | grep student > test_create_student_C.txt 
 cat test_create_student_C.txt  | cut -f 5 -d " " | sort | uniq > students_dir.txt 
+
+md5sum students_dir.txt 
+md5sum users_list.txt
