@@ -3,9 +3,13 @@ export GROUPID=`grep students /etc/group | cut -f 3 -d :`
 echo $GROUPID
 if [ -z "$GROUPID" ]
 then 
-  read -s -n 1 -p "Press any key to exit"
+  echo "group students creation failed"
+  read -s -n 1 -p "Press any key to exit\n"
+  
   exit 1
 else
+  echo "group students creation succeeded"
+
   read -s -n 1 -p "Press any key to continue"
 fi
 
@@ -20,6 +24,9 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
       #system("su hdfs -c '\''hdfs dfs -mkdir -p /user/"$1"'\''");
       #system("su hdfs -c '\''hdfs dfs -chown "$1":hdfs /user/"$1"'\''");
       #system("su hdfs -c '\''hdfs dfs -setfacl -R --set  user::rwx,group::r--,other::r-x /user/"$1"'\''");
+      #system("su hdfs  '\''hdfs dfs -ls -h --set  user::rwx,group::r--,other::r-x /user/"$1"'\''");
 	  #print $1 " account created and configured";
     }
 ' users.csv
+
+hadoop fs -ls -h /user/ >> test_create_student_C.txt 

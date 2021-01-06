@@ -14,9 +14,9 @@ match=$(python -c 'import crypt; print crypt.crypt("'"${PASSWORD}"'", "$6$'${sal
 #echo $epassword
 if [ ${match} == ${epassword} ]
 then 
-    echo "$USERNAME Password matches"
+    echo "$USERNAME Password matches" >> success_create_student_A.txt
 else 
-     echo "$USERNAME Password doesn't match"
+     echo "$USERNAME Password doesn't match" >> fail_create_student_A.txt 
 fi
 
 
