@@ -15,7 +15,7 @@ then
 else
   echo "group students creation succeeded"
 
-  read -s -n 1 -p "Press any key to continue"
+  read -s -n 1 -p "Press any key to continue\n"
 fi
 
 awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," } 
