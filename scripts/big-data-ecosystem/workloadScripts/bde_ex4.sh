@@ -18,7 +18,7 @@ execution_time=`printf "%.2f seconds" $duration`
 
 #echo "hellllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllloooooooooooooooooooooooooooooooooooo"
 #echo "hellllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllloooooooooooooooooooooooooooooooooooo" >> /workloadScripts/ex4_time
-echo "$1 - Ex4:Part1 Execution Time: $execution_time" >> /workloadScripts/Adel/ex4p1_time
+echo "$1 - Ex4: Part1 Execution Time: $execution_time" >> /workloadScripts/ex4p1_time
 
 #wait
 
@@ -38,4 +38,4 @@ hdfs dfs -rm -R wcount*
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
-echo "$1 - Ex4:Part3 Execution Time: $execution_time" >> /workloadScripts/Adel/ex4p3_time
+echo "$1 - Ex4: Part3 Execution Time: $execution_time" >> /workloadScripts/ex4p3_time
