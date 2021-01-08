@@ -47,7 +47,7 @@ Save and close the file.<br>
    <br> (Adding r parameter will reset the data for accounts before running the exercises)
 
 If you will run the workload scripts for a large number of users, I'd recommend starting the workload using this command:<br>
-`nohup ./bigsql_workload.sh <min> <max> <studentPasswordPrefix> r > nohup.out &`<br>
+`nohup ./bigsql_workload.sh <min> <max> <studentPasswordPrefix> > nohup.out &`<br>
 this will start the workload scripts in the backgroup and save the output to nohup.out file. You can disconnect your session without impacting the execution of the scripts.<br><br>
 
 
