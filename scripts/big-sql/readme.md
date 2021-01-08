@@ -20,15 +20,16 @@ Provision a Db2 warehouse on Cloud instance from cloud.ibm.com. <br>Follow the i
 6. Edit the file env_variables.sh and add a value to each variable:<br>
 `vi env_variables.sh`
 
-Example env_variables.sh file:<br>
-  `export DB2_HOSTNAME=dashdb-txn-sbox-yp-dal09-12.services.dal.bluemix.net`<br>
-  `export DB2_USERNAME=txc22951`<br>
-  `export DB2_PASSWORD=tbnvsjl37-ljwd0f`<br>
-  `export DB2_PORT=50000`<br>
-  `export DB2_DB=BLUDB`<br>
-  `export BIGSQL_PASSWD=bigdata2020`<br>
-  `export SCRIPTS_PATH=/bigsqlWorkload`<br>
-  `export GIT_REPO_DIR=/root/big-data-eng-2020`<br>
+Set `export SCRIPTS_PATH=/bigsqlWorkload`<br>
+Set `export GIT_REPO_DIR=/root/big-data-eng-2020`<br>
+Set the bigsql password at `export BIGSQL_PASSWD=`<br>
+Then set values for the DB2 on Cloud instance:<br>
+Set the hostname of the DB2 on Cloud at `export DB2_HOSTNAME=`<br>
+Set the username of the DB2 on Cloud at `export DB2_USERNAME=`<br>
+Set the password of the DB2 on Cloud at `export DB2_PASSWORD=`<br>
+Set the Db2 port of the DB2 on Cloud at `export DB2_PORT=` usually it should be 50000<br>
+Set the database name of the DB2 on Cloud at `export DB2_DB=` usually it should be BLUDB<br>
+Save and close the file.<br>
 
 7. Change permissions of all .sh files:<br>
 `chmod 777 *.sh`
