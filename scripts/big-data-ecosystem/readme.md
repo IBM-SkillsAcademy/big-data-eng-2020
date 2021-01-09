@@ -64,6 +64,7 @@ ______________________________________________________________
 10. Select "Restart" -> "Restart all affected" then "OK"
 11. Confirm that all required services started successfully.
 12. Select "Summary" tab, look for "Quick Links" section and click "Ranger Admin UI".
+    Clicking the link may not work, in that case, go to the url <ip-adress>:6080 and then proceed to next step
 13. Confirm that a link appears under "Hive" section. This is for pre-configured policies. 
 
 -------------------------------------------------------------------------
