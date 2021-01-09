@@ -21,4 +21,4 @@ hdfs dfs -rm -R wc2out
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 
-echo "$1 - Ex5:Part1 Execution Time: $execution_time" >> /workloadScripts/Adel/ex5_time
+echo "$1 - Ex5: Execution Time: $execution_time" >> /workloadScripts/ex5_time
