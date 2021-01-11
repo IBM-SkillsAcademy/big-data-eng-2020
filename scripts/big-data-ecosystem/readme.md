@@ -12,15 +12,15 @@ Readme for preparing environment for exercises
     `kill -9 <PID>`  
 3.  Make sure the PostgreSQL database is started; run the following command:  
     `systemctl status postgresql.service`
-    If you see the service status <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
     `systemctl start postgresql.service`
 4.  Make sure the Ambari Server is started; run the following command:  
     `systemctl status ambari-server.service`
-    If you see the service status <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
     `systemctl start ambari-server.service`
 5.  Make sure the Ambari Server is started; run the following command:  
     `systemctl status ambari-agent.service`
-    If you see the service status <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
     `systemctl start ambari-agent.service`
 
 --------------------------------------------------------------
