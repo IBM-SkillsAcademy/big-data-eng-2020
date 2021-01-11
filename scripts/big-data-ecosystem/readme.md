@@ -44,7 +44,7 @@ Readme for preparing environment for exercises
    a. Click **\>** next to Services to expand  
    b. Notice the color of he dots (Green=Started and Red=Stopped)  
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
-   d. Starting up of all services takes approximately 30 minutes.
+   d. Starting up of all services takes approximately 20 minutes.
    
 By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img src="Maintenance%20Mode.png" width="20" height="20" /> beside the service name indicate it has maintenance mode turned on.
 
@@ -76,6 +76,7 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 5. Execute the script   
     `./bde_envPrepare.sh "<Ambari_Admin_password>"`  
    where **\<Ambari_Admin_password\>** is the password of Ambari admin user
+   <br>(the script is interactive and will ask you to press keys to proceed, so you need to keep an eye on it)
 
 ---------------------------------------------------------------------------
 5- Steps to run the customization scripts for BigSQL exercises
