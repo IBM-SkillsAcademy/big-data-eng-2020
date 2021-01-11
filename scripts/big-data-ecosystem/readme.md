@@ -55,39 +55,8 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 * Druid
 * Big SQL Console
 
---------------------------------------------------------------
-4- Start services for BigSQL Course
---------------------------------------------------------------
-The following steps assumes you have followed the steps to start the cluster for BigData Ecosystem Course (see above).
-1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
-2. Stop <B>Spark2</B> service:  
-   a. Click **\>** next to Services to expand  
-   b. Click on <B>Spark2</B> service  
-   d. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
-   c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
-   d. Click <B>CONFIRM STOP</B>  
-3. Start <B>IBM Db2 Big SQL</B> service:  
-   a. Click **\>** next to Services to expand  
-   b. Click on <B>IBM Db2 Big SQL</B> service  
-   d. In the <B>IBM Db2 Big SQL Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
-   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for IBM Db2 Big SQL</B>  
-   d. Click <B>CONFIRM START</B>  
-4. Start <B>Big SQL Console</B> service:  
-   a. Click **\>** next to Services to expand  
-   b. Click on <B>Big SQL Console</B> service  
-   d. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
-   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
-   d. Click <B>CONFIRM START</B>  
-
-Services that should be stopped and put in maintenance mode for BigSQL Course:
-* Accumulo
-* SmartSense
-* Spark2
-* Druid
-
 -------------------------------------------------------------------------
-
-Steps to run the customization scripts for Big Data Ecosystem exercises
+4- Steps to run the customization scripts for Big Data Ecosystem exercises
 --------------------------------------------------------------------------
 1. Open PuTTy shell and login with **root**
 
@@ -109,6 +78,6 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
    where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 
 ---------------------------------------------------------------------------
-Steps to run the customization scripts for BigSQL exercises
+5- Steps to run the customization scripts for BigSQL exercises
 ---------------------------------------------------------------------------
 <br> Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/
