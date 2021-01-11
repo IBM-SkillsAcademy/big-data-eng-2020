@@ -1,10 +1,10 @@
  cd /root/bdescripts
 
-rm -rf hive_databases.txt
-rm -rf users_list.txt
+#rm -rf hive_databases.txt
+#rm -rf users_list.txt
 
 cut -f 1 -d "," users.csv  | sort | uniq > users_list.txt
-su hive -c "hive  -e 'show databases'" | grep student | cut -c 6-16 | sort | uniq > hive_databases.txt
+#su hive -c "hive  -e 'show databases'" | grep student | cut -c 6-16 | sort | uniq > hive_databases.txt
 
 
 
