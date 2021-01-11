@@ -1,0 +1,1 @@
+source verify_addJavaToEnvVars.sh
