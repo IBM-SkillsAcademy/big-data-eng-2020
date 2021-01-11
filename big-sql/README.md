@@ -47,7 +47,7 @@ So you don't need to manually download the labs.
    c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for IBM Db2 Big SQL</B>  
    d. Click <B>CONFIRM START</B>  
    
-# At this step, the VM is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.
+## At this step, the VM is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -85,7 +85,7 @@ Services that should be stopped and put in maintenance mode for BigSQL Course:
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-### Some BigSQL authority will need to be applied to all student accounts just before the start of Exercise-6 to allow them complete the exercise. Follow the following steps apply the authority.
+### Some BigSQL authority will need to be applied to all student accounts just before the start of Exercise-6 to allow them complete the exercise. Follow the following steps to apply the authority.
 ## Steps to run before Big SQL Exercise-6.
 
 Before running **Big SQL Ex. 6** run `bigsql_grantDBADM.sh` as below:  
