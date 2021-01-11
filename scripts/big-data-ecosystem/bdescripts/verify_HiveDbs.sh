@@ -1,10 +1,10 @@
- cd /root/bdescripts
+ #cd /root/bdescripts
 
-#rm -rf hive_databases.txt
-#rm -rf users_list.txt
+rm -rf hive_databases.txt
+rm -rf users_list.txt
 
 cut -f 1 -d "," users.csv  | sort | uniq > users_list.txt
-#su hive -c "hive  -e 'show databases'" | grep student | cut -c 6-16 | sort | uniq > hive_databases.txt
+su hive -c "hive  -e 'show databases'" | grep student | cut -c 6-16 | sort | uniq > hive_databases.txt
 
 
 
@@ -13,7 +13,8 @@ cut -f 1 -d "," users.csv  | sort | uniq > users_list.txt
 MD5_USERS=(`md5sum users_list.txt`)
 #=(`md5sum users_list.txt`)
 MD5_HIVEDBS=(`md5sum hive_databases.txt`) 
-
+#echo $MD5_USERS
+#echo $MD5_HIVEDBS
 if [ "$MD5_HIVEDBS" == "$MD5_USERS" ]; then
   echo -e "\nHive Databases created succesfully"
 else 
@@ -24,19 +25,6 @@ fi
 
 
 echo "hive databases created successfully"
-
-
-awk -v RS='\r?\n' '
-    BEGIN { FS = OFS = "," } 
-    { 
-    #  print "create database db_"$1 ";"
-    #system("./test_login.sh " $1 " " email[1]);
-    #system("su hdfs -c '\''hdfs dfs -chown "$1":hdfs /user/"$1"'\''");
-    system("echo su hive -c \"hive -e \"describe database db_student0001\"\" ");
-
-    }
-' users.csv 
-
 
 
 
