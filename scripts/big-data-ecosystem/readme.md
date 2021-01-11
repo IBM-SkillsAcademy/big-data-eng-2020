@@ -21,7 +21,7 @@ ______________________________________________________________
 9. Select "Save".
 
 --------------------------------------------------------------
-2- Starting hadoop services for BigData Ecosystem Course
+2- Starting services for BigData Ecosystem Course
 --------------------------------------------------------------
 1.  Open PuTTy shell and login with **root**
 2.  Check if port 53 is available; run the following command:  
@@ -45,7 +45,7 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 * Big SQL Console
 
 --------------------------------------------------------------
-3- Starting hadoop services for BigSQL Course
+3- Starting services for BigSQL Course
 --------------------------------------------------------------
 The following steps assumes you have followed the steps to start the cluster for BigData Ecosystem Course (see above).
 1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
@@ -98,6 +98,6 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
    where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 
 ---------------------------------------------------------------------------
-Steps to run the customization scripts for Bigsql exercises
+Steps to run the customization scripts for BigSQL exercises
 ---------------------------------------------------------------------------
 <br> Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/
