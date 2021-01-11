@@ -1,14 +1,30 @@
 ---------------------------------------------------------------
-Readme for preparing environment for BDE exercises
+Readme for preparing environment for exercises
 --------------------------------------------------------------
 
-______________________________________________________________
-Configuration using Ambari Web UI
-______________________________________________________________
-
+--------------------------------------------------------------
+1- Start Ambari Services
+--------------------------------------------------------------
+1.  Open PuTTy shell and login with **root**
+2.  Check if port 53 is available; run the following command:  
+    `lsof -i :53`
+    If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command  
+    `kill -9 <PID>`  
+3.  Make sure the PostgreSQL database is started; run the following command:  
+    `systemctl status postgresql.service`
+    If you see the service status <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    `systemctl start postgresql.service`
+4.  Make sure the Ambari Server is started; run the following command:  
+    `systemctl status ambari-server.service`
+    If you see the service status <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    `systemctl start ambari-server.service`
+5.  Make sure the Ambari Server is started; run the following command:  
+    `systemctl status ambari-agent.service`
+    If you see the service status <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    `systemctl start ambari-agent.service`
 
 --------------------------------------------------------------
-1- Create Ambari user for exercises
+2- Create Ambari user for exercises
 --------------------------------------------------------------
 1. Start Ambari Web UI (http://hostname:8080) and login with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
 2. Select "admin" menu at top right -> "Manage Ambari"
@@ -23,13 +39,8 @@ ______________________________________________________________
 --------------------------------------------------------------
 2- Starting services for BigData Ecosystem Course
 --------------------------------------------------------------
-1.  Open PuTTy shell and login with **root**
-2.  Check if port 53 is available; run the following command:  
-    `lsof -i :53`  
-      If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command  
-    `kill -9 <PID>`  
-3. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
-4. Check if all services are started.  
+1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
+2. Check if all services are started.  
    a. Click **\>** next to Services to expand  
    b. Notice the color of he dots (Green=Started and Red=Stopped)  
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
