@@ -21,7 +21,7 @@ ______________________________________________________________
 9. Select "Save".
 
 --------------------------------------------------------------
-2- Starting hadoop services
+2- Starting hadoop services for BDE Course
 --------------------------------------------------------------
 1.  Open PuTTy shell and login with **root**
 2.  Check if port 53 is available; run the following command:  
@@ -35,7 +35,33 @@ ______________________________________________________________
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
    d. Starting up of all services takes approximately 30 minutes.
    
-By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign ()
+By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img src="Maintenance%20Mode.png" width="20" height="20" /> beside the service name indicate it has maintenance mode turned on.
+
+
+--------------------------------------------------------------
+3- Starting hadoop services for BSQ Course
+--------------------------------------------------------------
+The following steps assumes you have followed the steps to start the cluster for BDE Course (see above).
+1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
+2. Stop <B>Spark2</B> service:  
+   a. Click **\>** next to Services to expand  
+   b. Click on <B>Spark2</B> service  
+   d. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
+   c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
+   d. Click <B>CONFIRM STOP</B>  
+3. Start <B>IBM Db2 Big SQL</B> service:  
+   a. Click **\>** next to Services to expand  
+   b. Click on <B>IBM Db2 Big SQL</B> service  
+   d. In the <B>IBM Db2 Big SQL Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
+   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for IBM Db2 Big SQL</B>  
+   d. Click <B>CONFIRM START</B>  
+4. Start <B>Big SQL Console</B> service:  
+   a. Click **\>** next to Services to expand  
+   b. Click on <B>Big SQL Console</B> service  
+   d. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
+   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
+   d. Click <B>CONFIRM START</B>  
+
 
 -------------------------------------------------------------------------
 
