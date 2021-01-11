@@ -37,7 +37,7 @@ Readme for preparing environment for exercises
 9. Select "Save".
 
 --------------------------------------------------------------
-2- Start services for BigData Ecosystem Course
+3- Start services for BigData Ecosystem Course
 --------------------------------------------------------------
 1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
 2. Check if all services are started.  
@@ -56,7 +56,7 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 * Big SQL Console
 
 --------------------------------------------------------------
-3- Start services for BigSQL Course
+4- Start services for BigSQL Course
 --------------------------------------------------------------
 The following steps assumes you have followed the steps to start the cluster for BigData Ecosystem Course (see above).
 1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
