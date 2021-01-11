@@ -47,7 +47,7 @@ So you don't need to manually download the labs.
    c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for IBM Db2 Big SQL</B>  
    d. Click <B>CONFIRM START</B>  
    
-## At this step, the VM is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.
+## <span style="color:red;">At this step, the VM is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.</span>
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -81,7 +81,7 @@ Services that should be stopped and put in maintenance mode for BigSQL Course:
 * Spark2
 * Druid
 
-## At this step, the VM is only ready to run the BigData Ecosystem exercises.
+## <span style="color:red;">At this step, the VM is only ready to run the BigData Ecosystem exercises.</span>
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
