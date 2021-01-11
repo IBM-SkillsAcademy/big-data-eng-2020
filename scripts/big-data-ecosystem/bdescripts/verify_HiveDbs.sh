@@ -33,7 +33,7 @@ awk -v RS='\r?\n' '
     #system("./test_login.sh " $1 " " email[1]);
     #system("su hdfs -c '\''hdfs dfs -chown "$1":hdfs /user/"$1"'\''");
     system("su hive -c '\''hive -e describe db_"$1"'\''");
-    #system("su hive -c \' hive -e "$1"'\''");
+
     }
 ' users.csv 
 
