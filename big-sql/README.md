@@ -47,7 +47,7 @@ So you don't need to manually download the labs.
    c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for IBM Db2 Big SQL</B>  
    d. Click <B>CONFIRM START</B>  
    
-# At this step, the is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.
+# At this step, the VM is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
