@@ -1,4 +1,7 @@
-To customize the VM for the Big SQL labs, do the following as root <b>user</b>:  
+---------------------------------------------------------------------------
+### Steps to customize the VM for the Big SQL labs 
+---------------------------------------------------------------------------    
+Do the following as <b>root</b> user: 
  1. Download the bigsql_customizations.sh script into /root in the VM:  
     `cd /root`   
     `wget https://raw.githubusercontent.com/IBM-SkillsAcademy/big-data-eng-2020/master/big-sql/bigsql_customizations.sh`  
