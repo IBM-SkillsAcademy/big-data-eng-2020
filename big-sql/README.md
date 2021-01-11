@@ -1,21 +1,25 @@
-To customize the VM for the Big SQL labs:  
- 1. Download the following scripts into the VM:  
-    `bigsql_customizations.sh` (place the file in /root) eg.:  
+To customize the VM for the Big SQL labs, do the following as root <b>user</b>:  
+ 1. Download the bigsql_customizations.sh script into /root in the VM:  
+    `cd /root`   
     `wget https://raw.githubusercontent.com/IBM-SkillsAcademy/big-data-eng-2020/master/big-sql/bigsql_customizations.sh`  
-
-    `bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh` (place the files in /home/bigsql)  
-  
-    Change ownership of the files to **bigsql** user eg.:  
-    `chown bigsql *.sh`  
-
- 2. Copy **users.csv** file from /root/bdescripts to /root by running the command below:  
-    `cp /root/bdescripts/users.csv /root/users.csv`  
- 3. Make sure of the following:  
-    `bigsql_grants.sh, bigsql_grantDBADM.sh, bigsql_revokeDBADM.sh` are owned by **bigsql** user.  
     
- 4. Make sure the file permissions are **744** for all the above-mentioned scripts. eg.:  
-     `chmod 744 *.sh`    
- 5. As **root**, run the first script only:  
+ 2. Change permissions of the file to **744** eg.: 
+    `chmod 744 bigsql_customizations.sh`    
+ 
+ 3. Download the following scripts into /home/bigsql in the VM:  
+    `cd /home/bigsql`   
+    `wget https://raw.githubusercontent.com/IBM-SkillsAcademy/big-data-eng-2020/master/big-sql/bigsql_grants.sh`  
+    `wget https://raw.githubusercontent.com/IBM-SkillsAcademy/big-data-eng-2020/master/big-sql/bigsql_grantDBADM.sh`  
+    `wget https://raw.githubusercontent.com/IBM-SkillsAcademy/big-data-eng-2020/master/big-sql/bigsql_revokeDBADM.sh`  
+    
+ 4. Change ownership and permissions of the files to **bigsql** user eg.:  
+    `chown bigsql *.sh`  
+    `chmod 744 *.sh`    
+    
+ 5. Copy **users.csv** file from /root/bdescripts to /root by running the command below:  
+    `cp /root/bdescripts/users.csv /root/users.csv`  
+    
+ 6. Start the customization; run the first script:  
     `cd /root`  
     `./bigsql_customizations.sh`  
 
