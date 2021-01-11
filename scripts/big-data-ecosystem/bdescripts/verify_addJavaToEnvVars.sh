@@ -11,3 +11,5 @@ else
   echo "JAVA bin not found"
   exit 1
 fi
+
+echo 'addJavaToEnvVars.sh ran successfully'

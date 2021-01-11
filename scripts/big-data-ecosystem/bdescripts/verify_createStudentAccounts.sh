@@ -36,8 +36,10 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
     }
 ' users.csv
 
-grep $GROUPID /etc/passwd | grep student | cut -f 1 -d ":" | sort | uniq > created_users.txt
 
+
+grep $GROUPID /etc/passwd | grep student | cut -f 1 -d ":" | sort | uniq > created_users.txt
+cut -f 1 -d "," users.csv | sort | uniq > users_list.txt
 
 hadoop fs -ls -h /user/ | grep student > test_create_student_C.txt 
 cat test_create_student_C.txt  | grep hdfs | grep drwxr--r-x | cut -f 5 -d " " | sort | uniq > students_dir.txt 
@@ -63,4 +65,5 @@ else
   cat test_create_student_C.txt | grep -v drwxr--r-x
   exit 1
 fi
+echo 'createStudentAccounts.sh ran successfully'
 

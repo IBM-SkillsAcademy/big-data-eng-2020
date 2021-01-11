@@ -1,1 +1,2 @@
+source verify_createStudentAccounts.sh
 source verify_addJavaToEnvVars.sh
