@@ -33,7 +33,9 @@ ______________________________________________________________
    a. Click **\>** next to Services to expand  
    b. Notice the color of he dots (Green=Started and Red=Stopped)  
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
-   d. Starting up of all services takes approximately 30 minutes.   
+   d. Starting up of all services takes approximately 30 minutes.
+   
+By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign ()
 
 -------------------------------------------------------------------------
 
