@@ -35,38 +35,6 @@ ______________________________________________________________
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
    d. Starting up of all services takes approximately 30 minutes.   
 
---------------------------------------------------------------
-3- Enable Autherization for HBase
---------------------------------------------------------------
-1. Select "Dashboard" at left side bar
-2. Select "HBase" under Services at left side bar
-3. Select "CONFIG" tab -> scrol down to "Security" section
-4. Turn on "Enable Authorization"
-5. Click "SAVE" button
-6. In "Save Configuration" dialog, type: "Enable HBase Authorization", then click "Save"
-7. Ambari will prompt for some recommended changes, accept it.
-8. Click "PROCEED ANYWAY" then "OK"
-9. Select "Restart" -> "Restart all affected" then click "OK"
-10. Confirm that all required services started successfully.
-
---------------------------------------------------------------
-4- Enable Ranger Hive plugin
---------------------------------------------------------------
-1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password/>**)
-2. Select "Dashboard" at left side bar
-3. Select "Ranger" under Services at left side bar
-4. Select "CONFIG" tab -> "Ranger Plugin" tab
-5. Turn on "Hive Ranger Plugin"
-6. Click "SAVE" button
-7. In "Save Configuration" dialog, type: "Enable Hive Ranger Plugin", then click "Save"
-8. Ambari will prompt for some recommended changes, accept it.
-19. Click "PROCEED ANYWAY" then "OK"
-10. Select "Restart" -> "Restart all affected" then "OK"
-11. Confirm that all required services started successfully.
-12. Select "Summary" tab, look for "Quick Links" section and click "Ranger Admin UI".
-    Clicking the link may not work, in that case, go to the url <ip-adress>:6080 and then proceed to next step
-13. Confirm that a link appears under "Hive" section. This is for pre-configured policies. 
-
 -------------------------------------------------------------------------
 
 Steps to run the customization scripts for Big Data Ecosystem exercises
