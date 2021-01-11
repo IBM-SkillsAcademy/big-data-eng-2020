@@ -1,14 +1,30 @@
 ---------------------------------------------------------------
-Readme for preparing environment for BDE exercises
+Readme for preparing environment for exercises
 --------------------------------------------------------------
 
-______________________________________________________________
-Configuration using Ambari Web UI
-______________________________________________________________
-
+--------------------------------------------------------------
+1- Start Ambari Services
+--------------------------------------------------------------
+1.  Open PuTTy shell and login with **root**
+2.  Check if port 53 is available; run the following command:  
+    `lsof -i :53`
+    If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command  
+    `kill -9 <PID>`  
+3.  Make sure the PostgreSQL database is started; run the following command:  
+    `systemctl status postgresql.service`
+    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    `systemctl start postgresql.service`
+4.  Make sure the Ambari Server is started; run the following command:  
+    `systemctl status ambari-server.service`
+    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    `systemctl start ambari-server.service`
+5.  Make sure the Ambari Server is started; run the following command:  
+    `systemctl status ambari-agent.service`
+    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:  
+    `systemctl start ambari-agent.service`
 
 --------------------------------------------------------------
-1- Create Ambari user for exercises
+2- Create Ambari user for exercises
 --------------------------------------------------------------
 1. Start Ambari Web UI (http://hostname:8080) and login with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
 2. Select "admin" menu at top right -> "Manage Ambari"
@@ -21,19 +37,53 @@ ______________________________________________________________
 9. Select "Save".
 
 --------------------------------------------------------------
-2- Starting hadoop services
+2- Start services for BigData Ecosystem Course
 --------------------------------------------------------------
-1.  Open PuTTy shell and login with **root**
-2.  Check if port 53 is available; run the following command:  
-    `lsof -i :53`  
-      If you notice any service other than yarn occupying port 53, note the PID of the process and terminate by the following command  
-    `kill -9 <PID>`  
-3. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
-4. Check if all services are started.  
+1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
+2. Check if all services are started.  
    a. Click **\>** next to Services to expand  
    b. Notice the color of he dots (Green=Started and Red=Stopped)  
    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"  
-   d. Starting up of all services takes approximately 30 minutes.   
+   d. Starting up of all services takes approximately 30 minutes.
+   
+By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img src="Maintenance%20Mode.png" width="20" height="20" /> beside the service name indicate it has maintenance mode turned on.
+
+Services that should be stopped and put in maintenance mode for BigData Ecosystem Course:
+* Accumulo
+* SmartSense
+* IBM Db2 Big SQL
+* Druid
+* Big SQL Console
+
+--------------------------------------------------------------
+3- Start services for BigSQL Course
+--------------------------------------------------------------
+The following steps assumes you have followed the steps to start the cluster for BigData Ecosystem Course (see above).
+1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
+2. Stop <B>Spark2</B> service:  
+   a. Click **\>** next to Services to expand  
+   b. Click on <B>Spark2</B> service  
+   d. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
+   c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
+   d. Click <B>CONFIRM STOP</B>  
+3. Start <B>IBM Db2 Big SQL</B> service:  
+   a. Click **\>** next to Services to expand  
+   b. Click on <B>IBM Db2 Big SQL</B> service  
+   d. In the <B>IBM Db2 Big SQL Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
+   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for IBM Db2 Big SQL</B>  
+   d. Click <B>CONFIRM START</B>  
+4. Start <B>Big SQL Console</B> service:  
+   a. Click **\>** next to Services to expand  
+   b. Click on <B>Big SQL Console</B> service  
+   d. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
+   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
+   d. Click <B>CONFIRM START</B>  
+
+Services that should be stopped and put in maintenance mode for BigSQL Course:
+* Accumulo
+* SmartSense
+* Spark2
+* Druid
 
 -------------------------------------------------------------------------
 
@@ -59,6 +109,6 @@ Steps to run the customization scripts for Big Data Ecosystem exercises
    where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 
 ---------------------------------------------------------------------------
-Steps to run the customization scripts for Bigsql exercises
+Steps to run the customization scripts for BigSQL exercises
 ---------------------------------------------------------------------------
 <br> Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/
