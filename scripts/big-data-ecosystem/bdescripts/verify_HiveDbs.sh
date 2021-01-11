@@ -3,8 +3,8 @@
 rm -rf hive_databases.txt
 rm -rf users_list.txt
 
-cut -f 1 -d "," users.csv | sort | uniq > users_list.txt
-su hive -c "hive  -e 'show databases'" | cut -c 6-17 | sort | uniq > hive_databases.txt
+cut -f 1 -d "," users.csv  | sort | uniq > users_list.txt
+su hive -c "hive  -e 'show databases'" | grep student | cut -c 6-17 | sort | uniq > hive_databases.txt
 
 
 
