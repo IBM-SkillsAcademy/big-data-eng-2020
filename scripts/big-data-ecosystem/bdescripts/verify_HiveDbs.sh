@@ -32,7 +32,7 @@ awk -v RS='\r?\n' '
     #  print "create database db_"$1 ";"
     #system("./test_login.sh " $1 " " email[1]);
     #system("su hdfs -c '\''hdfs dfs -chown "$1":hdfs /user/"$1"'\''");
-    system("echo su hive -c \"hive -e \"describe database db_"$1\" ");
+    system("echo su hive -c \"hive -e \"describe database db_student0001\"\" ");
 
     }
 ' users.csv 
