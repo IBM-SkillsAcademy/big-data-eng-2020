@@ -1,6 +1,6 @@
 #!/bin/bash
-SCRIPTS_PATH=/workloadScripts
-GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+#SCRIPTS_PATH=/workloadScripts
+#GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 
 #cd $GIT_REPO_DIR #toberemoved
 #git pull  #toberemoved
@@ -9,6 +9,9 @@ GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 #/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sh $SCRIPTS_PATH/
 #/bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/*.sql $SCRIPTS_PATH/
 #chmod a+x $SCRIPTS_PATH/*.sh
+
+source  ./env_variables.sh
+
 JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPTS_PATH=/workloadScripts
-GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+#SCRIPTS_PATH=/workloadScripts
+#GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin
 
@@ -9,7 +9,7 @@ current_student=$1
 current_student_bigsql_passwd=$2
 foldername=$3
 
-source  $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/env_variables.sh
+#source  $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/env_variables.sh
 
 echo 'Start clearing Ex 6 for ' $current_student
 

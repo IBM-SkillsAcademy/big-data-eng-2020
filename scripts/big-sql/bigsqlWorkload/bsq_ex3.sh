@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPTS_PATH=/workloadScripts
-GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+#SCRIPTS_PATH=/workloadScripts
+#GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin
 

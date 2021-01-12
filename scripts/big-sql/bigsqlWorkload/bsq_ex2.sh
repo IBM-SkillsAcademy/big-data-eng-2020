@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #!/bin/bash
-SCRIPTS_PATH=/workloadScripts
-GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+#SCRIPTS_PATH=/workloadScripts
+#GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 
 #cd $GIT_REPO_DIR
 #git pull

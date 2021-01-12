@@ -1,6 +1,6 @@
 #!/bin/bash
-SCRIPTS_PATH=/workloadScripts
-GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
+#SCRIPTS_PATH=/workloadScripts
+#GIT_REPO_DIR=/root/bigsql/scriptsbigsql/big-data-eng-2020
 JSQSH_CONF=$GIT_REPO_DIR/scripts/big-sql/conf/.jsqsh
 JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin
 
@@ -12,7 +12,7 @@ r=$(( ( $RANDOM % 300 ) +1 ))
 echo 'Sleeping ' ${r} 's before Ex6 for ' $1 ' ...'
 sleep ${r}s
 
-source  $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/env_variables.sh
+#source  $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/env_variables.sh
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex6_A.sql $SCRIPTS_PATH/bsq_ex6_A_$current_student.sql
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex6_B.sql $SCRIPTS_PATH/bsq_ex6_B_$current_student.sql
 /bin/cp $GIT_REPO_DIR/scripts/big-sql/bigsqlWorkload/bsq_ex6_C.sql $SCRIPTS_PATH/bsq_ex6_C_$current_student.sql

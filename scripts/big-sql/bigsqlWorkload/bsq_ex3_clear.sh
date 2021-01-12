@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPTS_PATH=/workloadScripts
+#SCRIPTS_PATH=/workloadScripts
 JSQSH_bin=/usr/ibmpacks/common-utils/current/jsqsh/bin
 current_student=$1
 current_student_bigsql_passwd=$2
