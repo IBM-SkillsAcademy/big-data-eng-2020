@@ -1,5 +1,9 @@
 #!/bin/bash
 
+r=$(( ($RANDOM % 300 ) +1 ))
+echo 'Sleeping ' ${r} 's before Ex 5 for ' $1 ' ...'
+sleep ${r}s
+
 echo 'Start executing Ex 7 for ' $1 ' - part 2'
 start=$(date +%s.%N)
 su $1 -c "hbase shell ./bde_ex7_hbaseCmds_$1.txt"
