@@ -1,7 +1,33 @@
 ---------------------------------------------------------------
 Readme for preparing environment for exercises
 --------------------------------------------------------------
+---------------------------------------------------------------------------
+** Preliminary Step**- Creating your users.csv file based on the course attendees data
+---------------------------------------------------------------------------
+<br> 
+1. You will have a spreadsheet with the users information in it, you will need to create a document containing only the emails of the attendees and manually add a column before the column of the emails containing the system usernames of all attendees , which will be in the following format 
+student0000, student0001, ... up to student9999 
 
+<br> 
+2. Make sure that first column is the one with the system usernames and the second column is the one with the user emails 
+
+<br> 
+3.It is better to manually validate the emails are valid emails (at least the contain the '@' character with some text before it)
+
+<br> 
+4.It is better save first couple of accounts for instructors (student0000 until may be student0004 or student0005) depending on the number of instructors and assistants in the course
+
+<br> 
+5.Make sure the saved file doesnt contain headers, usernames and emails should start at column 1, the file should be saved in csv format with the specific name of users.csv
+
+<br> 
+6.In order to communicate the account name mapping to the students, a copy of the original file without sensitive data like (email , phone numbers) should be shared with the students, this copy will be in spreadsheet format and will contain name, university or organization name (as in the original sheet) along with the generated system username so it can be shared with all attendees without revealing the current password 
+
+<br> 
+7.The setup script will generate a system account for each user with the password of the first part of the email address (after dropping the domain, for example a user with the email tomshelby@myuniversity.edu will have a password of tomshelby , the user with an email of walter.white@gmail.com will have a password of walter.white)
+
+<br> 
+8.Information about the initial password should be clearly communicated to students, if some error happens, they can manually ask the course instructors to change their passwords through private chat channel used during the course (slack)
 --------------------------------------------------------------
 1- Start Ambari Services
 --------------------------------------------------------------
@@ -68,7 +94,7 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
     `cd /root/bdescripts`  
     `chmod 744 bde_envPrepare.sh`  
 
-4. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv). (Steps to perform this step are at the end of the document) 
+4. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv). (Steps to perform this step are at the start of the document) 
    -  A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv
    -  Transfer the users.csv file to the VM  
     `scp users.csv root@<ip_address>:/root/bdescripts/users.csv`  
@@ -84,30 +110,3 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 <br> Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/
 
 
----------------------------------------------------------------------------
-6- Creating your users.csv file based on the course attendees data
----------------------------------------------------------------------------
-<br> 
-1. You will have a spreadsheet with the users information in it, you will need to create a document containing only the emails of the attendees and manually add a column before the column of the emails containing the system usernames of all attendees , which will be in the following format 
-student0000, student0001, ... up to student9999 
-
-<br> 
-2. Make sure that first column is the one with the system usernames and the second column is the one with the user emails 
-
-<br> 
-3.It is better to manually validate the emails are valid emails (at least the contain the '@' character with some text before it)
-
-<br> 
-4.It is better save first couple of accounts for instructors (student0000 until may be student0004 or student0005) depending on the number of instructors and assistants in the course
-
-<br> 
-5.Make sure the saved file doesnt contain headers, usernames and emails should start at column 1, the file should be saved in csv format with the specific name of users.csv
-
-<br> 
-6.In order to communicate the account name mapping to the students, a copy of the original file without sensitive data like (email , phone numbers) should be shared with the students, this copy will be in spreadsheet format and will contain name, university or organization name (as in the original sheet) along with the generated system username so it can be shared with all attendees without revealing the current password 
-
-<br> 
-7.The setup script will generate a system account for each user with the password of the first part of the email address (after dropping the domain, for example a user with the email tomshelby@myuniversity.edu will have a password of tomshelby , the user with an email of walter.white@gmail.com will have a password of walter.white)
-
-<br> 
-8.Information about the initial password should be clearly communicated to students, if some error happens, they can manually ask the course instructors to change their passwords through private chat channel used during the course (slack)
