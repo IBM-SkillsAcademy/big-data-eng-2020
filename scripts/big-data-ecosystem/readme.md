@@ -73,31 +73,38 @@ Readme for preparing environment for exercises
 --------------------------------------------------------------
 3- Start services for BigData Ecosystem Course
 --------------------------------------------------------------
-1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
+1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**).  
+2. Turn off maintenance mode for BigSQL service:   
+    a. Click **\>** next to **Services** section to expand it   
+    b. Select the **IBM Db2 Big SQL** service to open the **Summary** page   
+    c. In the **IBM Db2 Big SQL Summary** page, click the **ACTIONS** button and select **Turn Off Maintenance Mode**   
 
-2. Check if all services are started.
+2. Update a parameter in YARN configurations:   
+    a. Click **\>** next to **Services** section to expand it   
+    b. Select the **YARN** service to open the **Summary** page   
+    c. In the **YARN Summary**, click the **CONFIGS** tab   
+    d. In the search field, type **yarn.nodemanager.linux-container-executor.resources-handler.class** and click **Enter**   
+    e. Change the value of the parameter to **org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler**   
+    f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
+    g. Then you will get another pop up, click **“PROCEED ANYWAY”**   
+    g. In the **Services** section, click the **"..."** next to services, and click **"Start All"**   
+    
+    If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"**.   
 
-    a. Click **\>** next to Services to expand
-
-    b. Notice the color of he dots (Green=Started and Red=Stopped)
-
-    c. If Stopped, please start them by clicking "..." next to services, and click "Start All"
-
-    d. Starting up of all services takes approximately 20 minutes.
+3. Stop IBM Db2 Big SQL service and put it in maintenance mode:   
+    a. Click **\>** next to **Services** section to expand it   
+    b. Select the **IBM Db2 Big SQL** service to open the **Summary** page   
+    c. Click the **ACTIONS** button and select **Stop**   
+    d. In the popup confirmation dialog, check the **Turn On Maintenance Mode for IBM Db2 Big SQL** checkbox and click **CONFIRM STOP**
 
 ## By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.
 
-Services that should be stopped and put in maintenance mode for BigData Ecosystem Course:
-
-* Accumulo
-
-* SmartSense
-
-* IBM Db2 Big SQL
-
-* Druid
-
-* Big SQL Console
+Services that should be stopped and put in maintenance mode for BigData Ecosystem Course:    
+* Accumulo   
+* SmartSense   
+* IBM Db2 Big SQL   
+* Druid   
+* Big SQL Console   
 
 -------------------------------------------------------------------------
 4- Steps to run the customization scripts for Big Data Ecosystem exercises
@@ -126,7 +133,7 @@ where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 ---------------------------------------------------------------------------
 5- Steps to run the customization scripts for BigSQL exercises
 ---------------------------------------------------------------------------
-<br> Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/   
+Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/   
 
 ---------------------------------------------------------------------------
 
