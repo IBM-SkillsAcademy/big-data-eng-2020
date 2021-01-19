@@ -44,7 +44,7 @@ Readme for preparing environment for exercises
    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:   
    `systemctl start ambari-server.service`   
 
-5. Make sure the Ambari Server is started; run the following command:   
+5. Make sure the Ambari Agent is started; run the following command:   
    `systemctl status ambari-agent.service`   
    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:   
    `systemctl start ambari-agent.service`   
