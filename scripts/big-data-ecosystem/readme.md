@@ -20,7 +20,7 @@ Readme for preparing environment for exercises
   
 6. In order to communicate the account name mapping to the students, a copy of the original file without sensitive data like (email , phone numbers) should be shared with the students, this copy will be in spreadsheet format and will contain name, university or organization name (as in the original sheet) along with the generated system username so it can be shared with all attendees without revealing the current password
 
-7. The setup script will generate a system account for each user with the password of the first part of the email address (after dropping the domain, for example a user with the email tomshelby@myuniversity.edu will have a password of tomshelby , the user with an email of walter.white@gmail.com will have a password of walter.white)
+7. The setup script will generate a system account for each user with the password being set as the email address used for registeration .
 
 8. Information about the initial password should be clearly communicated to students, if some error happens, they can manually ask the course instructors to change their passwords through private chat channel used during the course (slack)
 
