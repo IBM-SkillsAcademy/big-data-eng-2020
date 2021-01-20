@@ -104,7 +104,7 @@ Readme for preparing environment for exercises
 3. Extract the compressed bdescript folder and change permissions by using the following command:   
 `tar zxvf bdescripts.tar.gz`   
 `cd /root/bdescripts`   
-`chmod 744 bde_envPrepare.sh`   
+`chmod 744 *.sh`   
 
 4. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv). (Steps to perform this step are at the start of the document)   
 - A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv   
