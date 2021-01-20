@@ -70,9 +70,9 @@ Readme for preparing environment for exercises
 
 9. Select "Save".
 
---------------------------------------------------------------
-3- Start services for BigData Ecosystem Course
---------------------------------------------------------------
+------------------------------
+3- Start the cluster services 
+------------------------------
 1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**).  
 2. Turn off maintenance mode for BigSQL service:   
     a. Click **\>** next to **Services** section to expand it   
@@ -91,20 +91,7 @@ Readme for preparing environment for exercises
     
     If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"**.   
 
-3. Stop IBM Db2 Big SQL service and put it in maintenance mode:   
-    a. Click **\>** next to **Services** section to expand it   
-    b. Select the **IBM Db2 Big SQL** service to open the **Summary** page   
-    c. Click the **ACTIONS** button and select **Stop**   
-    d. In the popup confirmation dialog, check the **Turn On Maintenance Mode for IBM Db2 Big SQL** checkbox and click **CONFIRM STOP**
-
 ## By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.
-
-Services that should be stopped and put in maintenance mode for BigData Ecosystem Course:    
-* Accumulo   
-* SmartSense   
-* IBM Db2 Big SQL   
-* Druid   
-* Big SQL Console   
 
 -------------------------------------------------------------------------
 4- Steps to run the customization scripts for Big Data Ecosystem exercises
@@ -129,6 +116,8 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 
 where **\<Ambari_Admin_password\>** is the password of Ambari admin user   
 <br>(the script is interactive and will ask you to press keys to proceed, so you need to keep an eye on it)   
+
+6. Proceed to the following section to customize the VM for the BigSQL exercises.
 
 ---------------------------------------------------------------------------
 5- Steps to run the customization scripts for BigSQL exercises
