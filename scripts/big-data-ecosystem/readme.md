@@ -117,7 +117,7 @@ Readme for preparing environment for exercises
 where **\<Ambari_Admin_password\>** is the password of Ambari admin user   
 <br>(the script is interactive and will ask you to press keys to proceed, so you need to keep an eye on it)   
 
-6. Proceed with the following section to customize the VM for the BigSQL exercises.
+6. Proceed to the following section to customize the VM for the BigSQL exercises.
 
 ---------------------------------------------------------------------------
 5- Steps to run the customization scripts for BigSQL exercises
