@@ -2,12 +2,7 @@
 
  1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
  
- 2. Start <B>IBM Db2 Big SQL</B> service:  
-   a. Click **\>** next to Services to expand  
-   b. Click on <B>IBM Db2 Big SQL</B> service  
-   d. In the <B>IBM Db2 Big SQL Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
-   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for IBM Db2 Big SQL</B>  
-   d. Click <B>CONFIRM START</B>  
+ 2. Check the **IBM Db2 BigSQL** service and make sure it is started.
  
  3. Open PuTTy shell and login with root
  
@@ -40,7 +35,7 @@ The first script will invoke the other scripts.
 The `bigsql_grants.sh` file will download the lab files from github and extract it in the proper location.  
 So you don't need to manually download the labs.
 
- 10. Stop <B>IBM Db2 Big SQL</B> service:  
+ 10. Stop <B>IBM Db2 Big SQL</B> service (after we complete the customization of the BigSQL, the service should be stopped to release the resources for the BDE course):  
    a. Click **\>** next to Services to expand  
    b. Click on <B>IBM Db2 Big SQL</B> service  
    d. In the <B>IBM Db2 Big SQL Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
@@ -48,6 +43,13 @@ So you don't need to manually download the labs.
    d. Click <B>CONFIRM STOP</B>  
    
 ## <div class="text-red mb-2">At this step, the VM is customized for both BigData Ecosystem and BigSQL Courses but the VM is only ready to run the BigData Ecosystem exercises.</div>
+
+Services that should be stopped and put in maintenance mode for BigData Ecosystem Course:    
+* Accumulo   
+* SmartSense   
+* IBM Db2 Big SQL   
+* Druid   
+* Big SQL Console
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
