@@ -87,11 +87,11 @@ Readme for preparing environment for exercises
     e. Change the value of the parameter to **org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler**   
     f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
     g. Then you will get another pop up, click **“PROCEED ANYWAY”**   
-    g. In the **Services** section, click the **"..."** next to services, and click **"Start All"**   
+    g. In the **Services** section, click the **"..."** next to services, and click **"Start All"** and wait for the **Start All** operation to complete (usually ~15min)  
     
-    If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"**.   
+    If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
 
-## By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.
+### By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.
 
 -------------------------------------------------------------------------
 4- Steps to run the customization scripts for Big Data Ecosystem exercises
