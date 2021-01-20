@@ -53,7 +53,7 @@ Services that should be stopped and put in maintenance mode for BigData Ecosyste
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-## You need follow the following steps only before the start of the BigSQL Course.
+## You need to follow the following steps only before the start of the BigSQL Course.
 ## Start services for BigSQL Course
 
 The following steps assumes you have followed the steps to start the cluster for BigData Ecosystem Course (see above).
