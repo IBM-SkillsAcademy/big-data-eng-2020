@@ -91,6 +91,8 @@ Readme for preparing environment for exercises
     
     If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"**.   
 
+## By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.
+
 -------------------------------------------------------------------------
 4- Steps to run the customization scripts for Big Data Ecosystem exercises
 --------------------------------------------------------------------------
