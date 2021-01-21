@@ -112,7 +112,7 @@ Readme for preparing environment for exercises
 `scp users.csv root@<ip_address>:/root/bdescripts/users.csv`   
 
 5. Execute the script   
-`./bde_envPrepare.sh "<Ambari_Admin_password>"`   
+`./bde_envPrepare.sh "<Ambari_Admin_password>"  "<Path_to_users.csv>"`  
 
 where **\<Ambari_Admin_password\>** is the password of Ambari admin user   
 <br>(the script is interactive and will ask you to press keys to proceed, so you need to keep an eye on it)   
