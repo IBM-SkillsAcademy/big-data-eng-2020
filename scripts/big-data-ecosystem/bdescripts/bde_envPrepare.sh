@@ -54,7 +54,7 @@ source genHbasescript.sh $USERS_FILE
 pause
 
 echo 'Creating Hive databases ...'
-source genCreateHiveDbCmds.sh
+source genCreateHiveDbCmds.sh $USERS_FILE
 su hive -c 'hive -f createHiveDBs.sql'
 source createHivePolicies.sh $1 $USERS_FILE
 pause
