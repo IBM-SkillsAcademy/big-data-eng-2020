@@ -109,7 +109,7 @@ Readme for preparing environment for exercises
 4. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv). (Steps to perform this step are at the start of the document)   
 - A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv   
 - Transfer the users.csv file to the VM   
-`scp users.csv root@<ip_address>:/root/bdescripts/users.csv`   
+`scp users.csv root@<ip_address>:/root`   
 
 5. Execute the script   
 `./bde_envPrepare.sh "<Ambari_Admin_password>"  "<Path_to_users.csv>"`  
