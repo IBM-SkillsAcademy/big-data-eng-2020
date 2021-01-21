@@ -109,6 +109,8 @@ Readme for preparing environment for exercises
 - A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv   
 - Transfer the users.csv file to the VM   
 `scp users.csv root@<ip_address>:/root`   
+- Make sure the **users.csv** is readable by all users:   
+`chmod 644 /root/users.csv`   
 
 5. Execute the script   
 `./bde_envPrepare.sh "<Ambari_Admin_password>"  "<Path_to_users.csv>"`  
