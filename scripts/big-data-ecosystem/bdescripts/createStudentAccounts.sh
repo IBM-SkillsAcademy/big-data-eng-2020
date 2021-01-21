@@ -10,4 +10,4 @@ awk -v RS='\r?\n' ' BEGIN { FS = OFS = "," }
       system("su hdfs -c '\''hdfs dfs -setfacl -R --set  user::rwx,group::r--,other::r-x /user/"$1"'\''");
 	  print $1 " account created and configured";
     }
-' users.csv
+' $1

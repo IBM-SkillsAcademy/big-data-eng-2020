@@ -1,3 +1,4 @@
+export USERS_FILE=$1
 awk -v RS='\r?\n' '
     BEGIN { FS = OFS = "," } 
     { 
@@ -5,7 +6,7 @@ awk -v RS='\r?\n' '
       system("su hbase -c '\''echo \"grant '\''\\'\'''\''"$1"'\''\\'\'''\'', '\''\\'\'''\''RWXC'\''\\'\'''\'', '\''\\'\'''\''@ns_"$1"'\''\\'\'''\''\" | hbase shell -n '\''");
       
     }
-' users.csv
+' $USERS_FILE
 
 echo 'list created namespaces: '
 su hbase -c 'echo "list_namespace" | hbase shell -n'

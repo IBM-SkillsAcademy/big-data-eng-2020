@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export USERS_FILE=$2
 numMem=$(dmidecode -t memory | egrep  -i '^(\s|\t)+Size' | grep -v "No Module Installed" | awk '{sum+=$2}END{print sum}')
 if [ $numMem -lt 140000 ]; then
    read -p "Warning: The Memory size is less than 140 GB. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
@@ -32,7 +32,7 @@ function pause(){
 
 
 echo 'Creating student accounts ...'
-source createStudentAccounts.sh
+source createStudentAccounts.sh $USERS_FILE
 pause
 
 echo 'Adding java path to environment variables ...'
@@ -41,16 +41,16 @@ source addJavaToEnvVars.sh
 pause
 
 echo 'Creating HBase namspaces and granting permissions ...'
-source genHbasescript.sh
+source genHbasescript.sh $USERS_FILE
 pause
 
 echo 'Creating Hive databases ...'
 source genCreateHiveDbCmds.sh
 su hive -c 'hive -f createHiveDBs.sql'
-source createHivePolicies.sh $1
+source createHivePolicies.sh $1 $USERS_FILE
 pause
 
 echo 'Preparing labfiles folder ...'
-source prepareLabfilesFolder.sh
+source prepareLabfilesFolder.sh 
 
 echo 'Congratulations! .. Environment is prepared for Big Data Ecosystem exercises'
