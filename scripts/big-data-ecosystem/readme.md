@@ -78,8 +78,7 @@ Readme for preparing environment for exercises
     a. Click **\>** next to **Services** section to expand it   
     b. Select the **IBM Db2 Big SQL** service to open the **Summary** page   
     c. In the **IBM Db2 Big SQL Summary** page, click the **ACTIONS** button and select **Turn Off Maintenance Mode**   
-
-2. Update a parameter in YARN configurations:   
+3. Update a parameter in YARN configurations:   
     a. Click **\>** next to **Services** section to expand it   
     b. Select the **YARN** service to open the **Summary** page   
     c. In the **YARN Summary**, click the **CONFIGS** tab   
@@ -87,7 +86,7 @@ Readme for preparing environment for exercises
     e. Change the value of the parameter to **org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler**   
     f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
     g. Then you will get another pop up, click **“PROCEED ANYWAY”**   
-    g. In the **Services** section, click the **"..."** next to services, and click **"Start All"** and wait for the **Start All** operation to complete (usually ~15min)  
+    h. In the **Services** section, click the **"..."** next to services, and click **"Start All"** and wait for the **Start All** operation to complete (usually ~15min)  
     
     If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
 
