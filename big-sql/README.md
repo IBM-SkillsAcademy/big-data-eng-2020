@@ -82,7 +82,7 @@ Services that should be stopped and put in maintenance mode for BigSQL Course:
 * Spark2
 * Druid
 
-## <div class="text-red mb-2">At this step, the VM is only ready to run the BigData Ecosystem exercises.</div>
+## <div class="text-red mb-2">At this step, the VM is only ready to run the BigSQL exercises.</div>
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
