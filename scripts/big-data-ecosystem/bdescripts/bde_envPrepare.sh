@@ -1,5 +1,14 @@
 #!/bin/bash
 export USERS_FILE=$2
+
+
+if [ -r $USERS_FILE ];
+then
+   echo "$USERS_FILE is readable"
+else
+   echo "$USERS_FILE is not readable"
+   exit 1
+fi
 numMem=$(dmidecode -t memory | egrep  -i '^(\s|\t)+Size' | grep -v "No Module Installed" | awk '{sum+=$2}END{print sum}')
 if [ $numMem -lt 140000 ]; then
    read -p "Warning: The Memory size is less than 140 GB. Some services might fail to start. Are you sure you want to continue the setup script? " -n 1 -r
