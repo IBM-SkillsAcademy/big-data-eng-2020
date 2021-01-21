@@ -23,8 +23,8 @@
     `chown bigsql *.sh`  
     `chmod 744 *.sh`    
     
- 8. Copy **users.csv** file from /root/bdescripts to /root by running the command below:  
-    `cp /root/bdescripts/users.csv /root/users.csv`  
+ 8. Make sure you have the **users.csv** file under /root folder:  
+    `ls -la /root/users.csv`  
     
  9. Start the customization; run the first script:  
     `cd /root`  
