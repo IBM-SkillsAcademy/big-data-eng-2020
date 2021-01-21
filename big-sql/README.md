@@ -60,21 +60,31 @@ The following steps assumes you have followed the steps to start the cluster for
 2. Stop <B>Spark2</B> service:  
    a. Click **\>** next to Services to expand  
    b. Click on <B>Spark2</B> service  
-   d. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
-   c. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
-   d. Click <B>CONFIRM STOP</B>  
-3. Start <B>IBM Db2 Big SQL</B> service:  
-   a. Click **\>** next to Services to expand  
-   b. Click on <B>IBM Db2 Big SQL</B> service  
-   d. In the <B>IBM Db2 Big SQL Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
-   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for IBM Db2 Big SQL</B>  
-   d. Click <B>CONFIRM START</B>  
-4. Start <B>Big SQL Console</B> service:  
+   c. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
+   d. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
+   e. Click <B>CONFIRM STOP</B>  
+3. Start <B>Big SQL Console</B> service:  
    a. Click **\>** next to Services to expand  
    b. Click on <B>Big SQL Console</B> service  
-   d. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
-   c. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
-   d. Click <B>CONFIRM START</B>  
+   c. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
+   d. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
+   e. Click <B>CONFIRM START</B>  
+4. Turn off maintenance mode for BigSQL service:   
+   a. Click **\>** next to **Services** section to expand it   
+   b. Select the **IBM Db2 Big SQL** service to open the **Summary** page   
+   c. In the **IBM Db2 Big SQL Summary** page, click the **ACTIONS** button and select **Turn Off Maintenance Mode**   
+5. Update a parameter in YARN configurations:   
+   a. Click **\>** next to Services to expand  
+   b. Select the **YARN** service to open the **Summary** page   
+   c. In the **YARN Summary**, click the **CONFIGS** tab   
+   d. In the search field, type **yarn.nodemanager.linux-container-executor.resources-handler.class** and click **Enter**   
+   e. Change the value of the parameter to **org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler**   
+   f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
+   g. Then you will get another pop up, click **“PROCEED ANYWAY”**   
+   h. In the **Services** section, click the **"..."** next to services, and click **"Start All"** and wait for the **Start All** operation to complete (usually ~15min)  
+    
+    If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
+
 
 Services that should be stopped and put in maintenance mode for BigSQL Course:
 * Accumulo
