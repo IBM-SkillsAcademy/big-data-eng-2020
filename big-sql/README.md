@@ -78,10 +78,11 @@ The following steps assumes you have followed the steps to start the cluster for
    d. In the search field, type **yarn.nodemanager.linux-container-executor.resources-handler.class** and click **Enter**   
    e. Change the value of the parameter to **org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler**   
    f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
-   g. Then you will get another pop up, click **“PROCEED ANYWAY”**   
-   h. In the **Services** section, click the **"..."** next to services, and click **"Start All"** and wait for the **Start All** operation to complete (usually ~15min)  
+   g. Then you will get another pop up, click **“PROCEED ANYWAY”**    
+   h. Click **OK** to confirm   
+   h. In the **Services** section, click the **"..."** next to services, and click **"Restart All Required"** and wait for the **Restart All Required** operation to complete (usually ~15min)  
     
-    If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
+    If restarting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
 
 
 Services that should be stopped and put in maintenance mode for BigSQL Course:
