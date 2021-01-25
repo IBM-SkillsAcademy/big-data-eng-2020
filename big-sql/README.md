@@ -80,7 +80,7 @@ The following steps assumes you have followed the steps to start the cluster for
    f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
    g. Then you will get another pop up, click **“PROCEED ANYWAY”**    
    h. Click **OK** to confirm   
-   h. In the **Services** section, click the **"..."** next to services, and click **"Restart All Required"** and wait for the **Restart All Required** operation to complete (usually ~15min)  
+   h. In the **Services** section, click the **"..."** next to services, click **"Restart All Required"** and click **CONFIRM RESTART** in the popup dialog. Wait for the **Restart All Required** operation to complete (usually ~15min)  
     
     If restarting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
 
