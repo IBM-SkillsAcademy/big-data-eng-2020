@@ -60,15 +60,13 @@ The following steps assumes you have followed the steps to start the cluster for
 2. Stop <B>Spark2</B> service:  
    a. Click **\>** next to Services to expand  
    b. Click on <B>Spark2</B> service  
-   c. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>  
-   d. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
-   e. Click <B>CONFIRM STOP</B>  
+   c. In the <B>Spartk2 Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Stop</B>. In the confirmation dialog, check the <B>Turn On Maintenance Mode for Spark2</B>  
+   d. Click <B>CONFIRM STOP</B>  
 3. Start <B>Big SQL Console</B> service:  
    a. Click **\>** next to Services to expand  
    b. Click on <B>Big SQL Console</B> service  
-   c. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>  
-   d. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
-   e. Click <B>CONFIRM START</B>  
+   c. In the <B>Big SQL Console Summary</B> page, Click on the <B>ACTIONS</B> button and click <B>Start</B>. In the confirmation dialog, check the <B>Turn Off Maintenance Mode for Big SQL Console</B>  
+   d. Click <B>CONFIRM START</B>  
 4. Turn off maintenance mode for BigSQL service:   
    a. Click **\>** next to **Services** section to expand it   
    b. Select the **IBM Db2 Big SQL** service to open the **Summary** page   
