@@ -110,3 +110,19 @@ Login with **root** account
     `su bigsql`  
     `./bigsql_revokeDBADM.sh`  
 
+**Please note that the above script grants Database Admin authority to the students group, if you would like to grant the authority to selected users only, following the following steps:**
+
+ - Login with **root** account
+ - Switch to bigsql account:   `su bigsql`  
+ - Connect to the database:   `db2 connect to bigsql`   
+ - Grant the authority:   `db2 grant DBADM on database to <list-of-users>`   
+     Example:   `db2 grant DBADM on database to student0000, student0001, student0002`   
+ - Disconnect from the database:   `db2 connect reset`   
+
+**To revoke the granted authority:**
+ - Login with **root** account
+ - Switch to bigsql account:   `su bigsql`  
+ - Connect to the database:   `db2 connect to bigsql`   
+ - Revoke the authority:   `db2 revoke DBADM on database from <list-of-users>`   
+     Example:   `db2 revoke DBADM on database from student0000, student0001, student0002`   
+ - Disconnect from the database:   `db2 connect reset`   
