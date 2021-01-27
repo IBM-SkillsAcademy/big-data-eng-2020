@@ -2,7 +2,7 @@
 **Troubleshooting Guide**   
 ----------------------------
 ## YARN NodeManager is Stopped
- - If you notice any error notification on the YARN service, you need to resolve it immediatly. One common situation that we saw couple of times before is that the NodeManager component is stopped and everytime you try to start it reports success and the  in less than a minute it stop again. The NodeManager component is critical for most of the exercises. Follow the following steps to resolve the issue:   
+ - If you notice any error notification on the YARN service, you need to resolve it immediatly. One common situation that we saw couple of times before is that the NodeManager component is stopped and everytime you try to start it, it starts successfully then, in less than a minute, it stop again. The NodeManager component is critical for most of the exercises. Follow the following steps to resolve the issue:   
     **Update a parameter in YARN configurations:**   
     a. Click **\>** next to **Services** section to expand it   
     b. Select the **YARN** service to open the **Summary** page   
