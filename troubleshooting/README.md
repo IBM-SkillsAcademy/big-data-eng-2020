@@ -11,7 +11,7 @@
     e. Change the value of the parameter to **org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler**   
     f. Click the **SAVE** button at the button right, type a comment in the popup dialog, and click **SAVE**   
     g. Then you will get another pop up, click **“PROCEED ANYWAY”**   
-    h. Check the list of services, and if you see any service that requires restart, make sure the maintenance mode is turned off (put it back in maintenance mode after you complete the restart and stop it if it was stopped) this   
+    h. Check the list of services, and if you see any service that requires restart, make sure the maintenance mode is turned off (put it back in maintenance mode after you complete the restart and stop it if it was stopped)   
     i. In the **Services** section, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min)  
     If starting the services fail to start IBM Db2 Big SQL service, click the **"..."** next to services, and click **"Restart All Required"** and wait for the operation to complete (usually ~15min).   
 
