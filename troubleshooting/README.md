@@ -34,11 +34,19 @@
     <img  src="Screen%20Shot%202021-01-24%20at%204.06.06%20PM.png"  width="650" />   
     
     From Ambari, confirm the CPU usage is now normal:   
-    <img  src="Screen%20Shot%202021-01-27%20at%209.58.42%20AM.png"  width="650" />  
+    <img  src="Screen%20Shot%202021-01-27%20at%209.58.42%20AM.png"  width="650" />     
 
+## Infra Solr Consuming CPU Capacity
+ -  Similar to the above, a process called `yumBackend.py` could start at any time and consume a large amount of the CPU capacity. You should keep an eye on the CPU/Memory utilization of the VM. Usually, if no-one is running any exercises, the CPU should be between 5-10%.   
 
+    Every now and then, use **root** and check the top processes running using command: `top`  
 
-
-
-
-
+    Look for the `yumBackend.py` process, you should see a line like this if the process is running:   
+    <img  src="yumBackend.png"  width="650" />   
+    
+    To stop the process, run the following commands:   
+    `systemctl stop packagekit.service`    
+    `systemctl disable packagekit.service`   
+    
+    After stopping the processe, confirm using `top` command that the process is no longer listed.   
+    
