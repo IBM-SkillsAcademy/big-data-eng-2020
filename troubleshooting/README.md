@@ -49,4 +49,5 @@
     `systemctl disable packagekit.service`   
     
     After stopping the processe, confirm using `top` command that the process is no longer listed.   
+    (Although the service has been disabled, for some reason, it can start again. So you need to keep an eye on the running processes even after completing the above procedure).   
     
