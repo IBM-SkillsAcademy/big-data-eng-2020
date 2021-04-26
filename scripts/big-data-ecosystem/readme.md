@@ -1,11 +1,6 @@
+# Preparing the environment for exercises
 
----------------------------------------------------------------
-Readme for preparing environment for exercises
---------------------------------------------------------------
-
-  Before you start- Create the users.csv file based on the course attendees data
----------------------------------------------------------------------------------
-
+## 1. Create the users.csv file based on the course attendees data
 1. You will have a spreadsheet with the users information in it, you will need to create a document containing only the emails of the attendees and manually add a column before the column of the emails containing the system usernames of all attendees , which will be in the following format
 
 `student0000, student0001, ... up to student9999`
@@ -24,9 +19,7 @@ Readme for preparing environment for exercises
 
 8. Information about the initial password should be clearly communicated to students, if some error happens, they can manually ask the course instructors to change their passwords through private chat channel used during the course (slack)
 
---------------------------------------------------------------
-1- Start Ambari Services
---------------------------------------------------------------
+## 2. Start Ambari Services
 1. Open PuTTy shell and login with **root**
 
 2. Check if port 53 is available; run the following command:   
@@ -49,9 +42,7 @@ Readme for preparing environment for exercises
    If you see the service status as <B>Active: active (running)</B> then proceed to the next step, else run the following command to start the service:   
    `systemctl start ambari-agent.service`   
 
---------------------------------------------------------------
-2- Create Ambari user for exercises
---------------------------------------------------------------
+## 3. Create Ambari user for exercises
 1. Start Ambari Web UI (http://hostname:8080) and login with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**)
 
 2. Select "admin" menu at top right -> "Manage Ambari"
@@ -70,9 +61,7 @@ Readme for preparing environment for exercises
 
 9. Select "Save".
 
-------------------------------
-3- Start the cluster services 
-------------------------------
+## 4. Start the cluster services 
 1. Start Ambari Web UI (http://hostname:8080) and login with with Ambari admin user (**\<Ambari_Admin\>**/**\<Ambari_Admin_password\>**).  
 2. Turn off maintenance mode for BigSQL service:   
     a. Click **\>** next to **Services** section to expand it   
@@ -93,15 +82,13 @@ Readme for preparing environment for exercises
     b. Select the **Spark2** service to open the **Summary** page   
     c. In the **Spark2** page, click the **ACTIONS** button and select **Restart All**    
     
-### By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.
+**By default, some of the services have the maintenance mode turned on. These services are not required for the BDE course. By clicking "Start All", Ambari will try to start all services except the ones with maintenance mode turned on. The sign <img  src="Maintenance%20Mode.png"  width="20"  height="20"  /> beside the service name indicate it has maintenance mode turned on.**
 
--------------------------------------------------------------------------
-4- Steps to run the customization scripts for Big Data Ecosystem exercises
---------------------------------------------------------------------------
-1. Open PuTTy shell and login with **root**
+## 5. Run the customization scripts for Big Data Ecosystem exercises
+1. Open PuTTy shell and login with `root`
 
 2. Run the following command to download a set of scripts from IBM Skills Academy to /root directory in the VM   
-`wget https://github.com/IBM-SkillsAcademy/big-data-eng-2020/raw/master/scripts/big-data-ecosystem/bdescripts.tar.gz`   
+`wget https://github.com/IBM-SkillsAcademy/big-data-eng-2020/raw/master/scripts/big-data-ecosystem/bdescripts.tar.gz`
 
 3. Extract the compressed bdescript folder and change permissions by using the following command:   
 `tar zxvf bdescripts.tar.gz`   
@@ -109,7 +96,7 @@ Readme for preparing environment for exercises
 `chmod 744 *.sh`   
 
 4. As a pre-requisite, you should have prepared a list of students in a csv file (users.csv). (Steps to perform this step are at the start of the document)   
-- A sample file is available at <br> https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/scripts/big-data-ecosystem/bdescripts/users.csv   
+- A sample file is available at: [users.csv](bdescripts/users.csv)
 - Transfer the users.csv file to the VM   
 `scp users.csv root@<ip_address>:/root`   
 - Make sure the **users.csv** is readable by all users:   
@@ -124,11 +111,5 @@ where **\<Ambari_Admin_password\>** is the password of Ambari admin user
 
 6. Proceed to the following section to customize the VM for the BigSQL exercises.
 
----------------------------------------------------------------------------
-5- Steps to run the customization scripts for BigSQL exercises
----------------------------------------------------------------------------
-Follow the instructions in README in https://github.com/IBM-SkillsAcademy/big-data-eng-2020/blob/master/big-sql/   
-
----------------------------------------------------------------------------
-
-
+## 6. Run the customization scripts for BigSQL exercises
+Follow the instructions in README in [big-sql](../../big-sql).
